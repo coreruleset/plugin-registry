@@ -9,4 +9,4 @@ The rule ID range from 9,500,000 - 9,999,999 is reserved for CRS plugins.
 
 | *Plugin Name* | *Rule ID Range*     | *Website* |
 |---------------|---------------------|-----------|
-| dummy         | 9,500,000-9,500,999 | https://github.com/coreruleset/dummy-plugin |
+| dummy         | 9,500,000 - 9,500,999 | https://github.com/coreruleset/dummy-plugin |
