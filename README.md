@@ -6,7 +6,11 @@ place to register plugins and reserve rule ID ranges.
 
 The rule ID range from 9,500,000 - 9,999,999 is reserved for CRS plugins.
 
+Plugins usually get a range of 1,000 IDs with the notable exception of the incubator plugin that
+maps the regular CRS IDs from the 900K to the 9.9M range.
+
 
 | *Plugin Name* | *Rule ID Range*     | *Website* |
 |---------------|---------------------|-----------|
 | dummy         | 9,500,000 - 9,500,999 | https://github.com/coreruleset/dummy-plugin |
+| incubator     | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin |
