@@ -13,4 +13,5 @@ maps the regular CRS IDs from the 900K to the 9.9M range.
 | *Plugin Name* | *Rule ID Range*     | *Website* |
 |---------------|---------------------|-----------|
 | dummy         | 9,500,000 - 9,500,999 | https://github.com/coreruleset/dummy-plugin |
+| auto-decoding | 9,501,000 - 9,501,999 | https://github.com/coreruleset/auto-decoding-plugin |
 | incubator     | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin |
