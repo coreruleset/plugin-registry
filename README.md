@@ -10,9 +10,9 @@ Plugins usually get a range of 1,000 IDs with the notable exception of the incub
 maps the regular CRS IDs from the 900K to the 9.9M range.
 
 
-| *Plugin Name* | *Rule ID Range*     | *Website* |
-|---------------|---------------------|-----------|
-| dummy         | 9,500,000 - 9,500,999 | https://github.com/coreruleset/dummy-plugin |
-| auto-decoding | 9,501,000 - 9,501,999 | https://github.com/coreruleset/auto-decoding-plugin |
-| antivirus     | 9,502,000 - 9,502,999 | https://github.com/coreruleset/antivirus-plugin |
-| incubator     | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin |
+| *Plugin Name* | *Rule ID Range*     | *Repository* | *Type* |
+|---------------|---------------------|-----------|---------|
+| dummy         | 9,500,000 - 9,500,999 | https://github.com/coreruleset/dummy-plugin | official |
+| auto-decoding | 9,501,000 - 9,501,999 | https://github.com/coreruleset/auto-decoding-plugin | official |
+| antivirus     | 9,502,000 - 9,502,999 | https://github.com/coreruleset/antivirus-plugin | official |
+| incubator     | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin | official |
