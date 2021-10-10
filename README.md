@@ -16,4 +16,5 @@ maps the regular CRS IDs from the 900K to the 9.9M range.
 | auto-decoding   | 9,501,000 - 9,501,999 | https://github.com/coreruleset/auto-decoding-plugin   | official |
 | antivirus       | 9,502,000 - 9,502,999 | https://github.com/coreruleset/antivirus-plugin       | official |
 | body-decompress | 9,503,000 - 9,503,999 | https://github.com/coreruleset/body-decompress-plugin | official |
+| fake-googlebot  | 9,504,000 - 9,504,999 | https://github.com/coreruleset/fake-googlebot-plugin  | official |
 | incubator       | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin       | official |
