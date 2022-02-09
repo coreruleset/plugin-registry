@@ -18,4 +18,5 @@ maps the regular CRS IDs from the 900K to the 9.9M range.
 | body-decompress | 9,503,000 - 9,503,999 | https://github.com/coreruleset/body-decompress-plugin | official |
 | fake-bot        | 9,504,000 - 9,504,999 | https://github.com/coreruleset/fake-bot-plugin        | official |
 | google-oauth2   | 9,505,000 - 9,505,999 | https://github.com/coreruleset/google-oauth2-plugin   | official |
+| phpbb           | 9,506,000 - 9,506,999 | https://github.com/coreruleset/phpbb-plugin           | official |
 | incubator       | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin       | official |
