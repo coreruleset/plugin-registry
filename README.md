@@ -24,6 +24,6 @@ maps the regular CRS IDs from the 900K to the 9.9M range.
 | dokuwiki-rule-exclusions   | 9,509,000 - 9,509,999 | TBC                                                   | official |
 | cpanel-rule-exclusions     | 9,510,000 - 9,510,999 | TBC                                                   | official |
 | xenforo-rule-exclusions    | 9,511,000 - 9,511,999 | TBC                                                   | official |
-| phpbb-rule-exclusions      | 9,512,000 - 9,512,999 | TBC                                                   | official |
+| phpbb-rule-exclusions      | 9,512,000 - 9,512,999 | https://github.com/coreruleset/phpbb-plugin           | official |
 | phpmyadmin-rule-exclusions | 9,513,000 - 9,513,999 | TBC                                                   | official |
 | incubator                  | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin       | official |
