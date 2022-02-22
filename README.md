@@ -26,4 +26,5 @@ maps the regular CRS IDs from the 900K to the 9.9M range.
 | xenforo-rule-exclusions    | 9,511,000 - 9,511,999 | TBC                                                          | official |
 | phpbb-rule-exclusions      | 9,512,000 - 9,512,999 | https://github.com/coreruleset/phpbb-plugin                  | official |
 | phpmyadmin-rule-exclusions | 9,513,000 - 9,513,999 | TBC                                                          | official |
+| dos-protection             | 9,514,000 - 9,514,999 | TBC                                                          | official |
 | incubator                  | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin              | official |
