@@ -21,7 +21,7 @@ maps the regular CRS IDs from the 900K to the 9.9M range.
 | drupal-rule-exclusions     | 9,506,000 - 9,506,999 | https://github.com/coreruleset/drupal-rule-exclusions-plugin    | official |
 | wordpress-rule-exclusions  | 9,507,000 - 9,507,999 | TBC                                                             | official |
 | nextcloud-rule-exclusions  | 9,508,000 - 9,508,999 | https://github.com/coreruleset/nextcloud-rule-exclusions-plugin | official |
-| dokuwiki-rule-exclusions   | 9,509,000 - 9,509,999 | TBC                                                             | official |
+| dokuwiki-rule-exclusions   | 9,509,000 - 9,509,999 | https://github.com/coreruleset/dokuwiki-rule-exclusions-plugin  | official |
 | cpanel-rule-exclusions     | 9,510,000 - 9,510,999 | TBC                                                             | official |
 | xenforo-rule-exclusions    | 9,511,000 - 9,511,999 | TBC                                                             | official |
 | phpbb-rule-exclusions      | 9,512,000 - 9,512,999 | https://github.com/coreruleset/phpbb-plugin                     | official |
