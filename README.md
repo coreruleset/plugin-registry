@@ -23,7 +23,7 @@ maps the regular CRS IDs from the 900K to the 9.9M range.
 | nextcloud-rule-exclusions  | 9,508,000 - 9,508,999 | https://github.com/coreruleset/nextcloud-rule-exclusions-plugin  | official |
 | dokuwiki-rule-exclusions   | 9,509,000 - 9,509,999 | https://github.com/coreruleset/dokuwiki-rule-exclusions-plugin   | official |
 | cpanel-rule-exclusions     | 9,510,000 - 9,510,999 | https://github.com/coreruleset/cpanel-rule-exclusions            | official |
-| xenforo-rule-exclusions    | 9,511,000 - 9,511,999 | TBC                                                              | official |
+| xenforo-rule-exclusions    | 9,511,000 - 9,511,999 | https://github.com/coreruleset/xenforo-rule-exclusions           | official |
 | phpbb-rule-exclusions      | 9,512,000 - 9,512,999 | https://github.com/coreruleset/phpbb-plugin                      | official |
 | phpmyadmin-rule-exclusions | 9,513,000 - 9,513,999 | https://github.com/coreruleset/phpmyadmin-rule-exclusions-plugin | official |
 | dos-protection             | 9,514,000 - 9,514,999 | TBC                                                              | official |
