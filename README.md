@@ -18,7 +18,7 @@ maps the regular CRS IDs from the 900K to the 9.9M range.
 | fake-bot                      | 9,504,000 - 9,504,999 | https://github.com/coreruleset/fake-bot-plugin                      | official |
 | google-oauth2                 | 9,505,000 - 9,505,999 | https://github.com/coreruleset/google-oauth2-plugin                 | official |
 | drupal-rule-exclusions        | 9,506,000 - 9,506,999 | https://github.com/coreruleset/drupal-rule-exclusions-plugin        | official |
-| wordpress-rule-exclusions     | 9,507,000 - 9,507,999 | TBC                                                                 | official |
+| wordpress-rule-exclusions     | 9,507,000 - 9,507,999 | https://github.com/coreruleset/wordpress-rule-exclusions-plugin     | official |
 | nextcloud-rule-exclusions     | 9,508,000 - 9,508,999 | https://github.com/coreruleset/nextcloud-rule-exclusions-plugin     | official |
 | dokuwiki-rule-exclusions      | 9,509,000 - 9,509,999 | https://github.com/coreruleset/dokuwiki-rule-exclusions-plugin      | official |
 | cpanel-rule-exclusions        | 9,510,000 - 9,510,999 | https://github.com/coreruleset/cpanel-rule-exclusions-plugin        | official |
