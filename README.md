@@ -22,7 +22,7 @@ maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,
 | nextcloud-rule-exclusions     | 9,508,000 - 9,508,999 | https://github.com/coreruleset/nextcloud-rule-exclusions-plugin     | official | unreleased, untested |
 | dokuwiki-rule-exclusions      | 9,509,000 - 9,509,999 | https://github.com/coreruleset/dokuwiki-rule-exclusions-plugin      | official | unreleased, untested |
 | cpanel-rule-exclusions        | 9,510,000 - 9,510,999 | https://github.com/coreruleset/cpanel-rule-exclusions-plugin        | official | unreleased, untested |
-| xenforo-rule-exclusions       | 9,511,000 - 9,511,999 | https://github.com/coreruleset/xenforo-rule-exclusions-plugin       | official | unreleased, untested |
+| xenforo-rule-exclusions       | 9,511,000 - 9,511,999 | https://github.com/coreruleset/xenforo-rule-exclusions-plugin       | official | &#9989; tested |
 | phpbb-rule-exclusions         | 9,512,000 - 9,512,999 | https://github.com/coreruleset/phpbb-rule-exclusions-plugin         | official | &#9989; tested       |
 | phpmyadmin-rule-exclusions    | 9,513,000 - 9,513,999 | https://github.com/coreruleset/phpmyadmin-rule-exclusions-plugin    | official | being tested         |
 | dos-protection-modsecurity-v2 | 9,514,000 - 9,514,999 | https://github.com/coreruleset/dos-protection-plugin-modsecurity-v2 | official | unreleased, untested |
