@@ -28,4 +28,5 @@ maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,
 | dos-protection-modsecurity-v2 | 9,514,000 - 9,514,999 | https://github.com/coreruleset/dos-protection-plugin-modsecurity-v2 | official | untested             |
 | dos-protection-modsecurity-v3 | 9,515,000 - 9,515,999 | https://github.com/coreruleset/dos-protection-plugin-modsecurity-v3 | official | draft                |
 | machine-learning-integration-plugin | 9,516,000 - 9,516,999 | https://github.com/coreruleset/machine-learning-integration-plugin | official | draft                |
+| performance-plugin            | 9,517,000 - 9,517,999 | https://github.com/coreruleset/performance-plugin                   | official | draft                |
 | incubator                     | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin                     | official | -                    |
