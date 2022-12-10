@@ -11,7 +11,7 @@ maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,
 
 | *Plugin Name*                 | *Rule ID Range*       | *Repository*                                                        | *Type*   | *Status*             |
 |-------------------------------|-----------------------|---------------------------------------------------------------------|----------|--------------------- | 
-| dummy                         | 9,500,000 - 9,500,999 | https://github.com/coreruleset/dummy-plugin                         | official | -                    | 
+| template                      | 9,500,000 - 9,500,999 | https://github.com/coreruleset/template-plugin                      | official | tested               | 
 | auto-decoding                 | 9,501,000 - 9,501,999 | https://github.com/coreruleset/auto-decoding-plugin                 | official | untested             | 
 | antivirus                     | 9,502,000 - 9,502,999 | https://github.com/coreruleset/antivirus-plugin                     | official | &#9989;&nbsp;tested  | 
 | body-decompress               | 9,503,000 - 9,503,999 | https://github.com/coreruleset/body-decompress-plugin               | official | &#9989;&nbsp;tested  | 
