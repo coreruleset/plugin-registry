@@ -25,7 +25,7 @@ maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,
 | xenforo-rule-exclusions       | 9,511,000 - 9,511,999 | https://github.com/coreruleset/xenforo-rule-exclusions-plugin       | official  | &#9989;&nbsp;tested  | |
 | phpbb-rule-exclusions         | 9,512,000 - 9,512,999 | https://github.com/coreruleset/phpbb-rule-exclusions-plugin         | official  | &#9989;&nbsp;tested  | |
 | phpmyadmin-rule-exclusions    | 9,513,000 - 9,513,999 | https://github.com/coreruleset/phpmyadmin-rule-exclusions-plugin    | official  | being tested         | |
-| iRedMail-exclusions-plugin    | 9,518,000 - 9,518,999 | https://github.com/EsadCetiner/iRedMail-exclusions-plugin           | 3rd party | &#9989;&nbsp;tested  | |
+| iRedMail-rule-exclusions-plugin    | 9,518,000 - 9,518,999 | https://github.com/EsadCetiner/iRedMail-exclusions-plugin           | 3rd party | &#9989;&nbsp;tested  | |
 | dos-protection-modsecurity-v2 | 9,514,000 - 9,514,999 | https://github.com/coreruleset/dos-protection-plugin-modsecurity-v2 | official  | untested             | |
 | dos-protection-modsecurity-v3 | 9,515,000 - 9,515,999 | https://github.com/coreruleset/dos-protection-plugin-modsecurity-v3 | official  | draft                | |
 | machine-learning-integration-plugin | 9,516,000 - 9,516,999 | https://github.com/coreruleset/machine-learning-integration-plugin | official | draft                | |
