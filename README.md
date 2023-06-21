@@ -11,7 +11,7 @@ maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,
 
 | *Plugin Name*                       | *Rule ID Range*       | *Repository*                                                             | *Type*    | *Status*            | *CI* |
 |-------------------------------------|-----------------------|--------------------------------------------------------------------------|-----------|---------------------| -----|
-| template                            | 9,500,000 - 9,500,999 | https://github.com/coreruleset/template-plugin                           | official  | tested              | [<img src="https://github.com/coreruleset/template-plugin/actions/workflows/integration.yml/badge.svg" alt=".github/workflows/integration.yml" width="300" />](https://github.com/coreruleset/template-plugin/actions/workflows/integration.yml) |
+| template                            | 9,500,000 - 9,500,999 | https://github.com/coreruleset/template-plugin                           | official  | &#9989;&nbsp;tested        | [<img src="https://github.com/coreruleset/template-plugin/actions/workflows/integration.yml/badge.svg" alt=".github/workflows/integration.yml" width="300" />](https://github.com/coreruleset/template-plugin/actions/workflows/integration.yml) |
 | auto-decoding                       | 9,501,000 - 9,501,999 | https://github.com/coreruleset/auto-decoding-plugin                      | official  | untested            |      |
 | antivirus                           | 9,502,000 - 9,502,999 | https://github.com/coreruleset/antivirus-plugin                          | official  | &#9989;&nbsp;tested |      |
 | body-decompress                     | 9,503,000 - 9,503,999 | https://github.com/coreruleset/body-decompress-plugin                    | official  | &#9989;&nbsp;tested |      |
@@ -29,5 +29,7 @@ maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,
 | dos-protection-modsecurity-v3       | 9,515,000 - 9,515,999 | https://github.com/coreruleset/dos-protection-plugin-modsecurity-v3      | official  | draft               |      |
 | machine-learning-integration-plugin | 9,516,000 - 9,516,999 | https://github.com/coreruleset/machine-learning-integration-plugin       | official  | draft               |      |
 | performance-plugin                  | 9,517,000 - 9,517,999 | https://github.com/coreruleset/performance-plugin                        | official  | draft               |      |
-| iRedMail-rule-exclusions-plugin     | 9,518,000 - 9,518,999 | https://github.com/EsadCetiner/iRedMail-exclusions-plugin                | 3rd party | &#9989;&nbsp;tested |      |
+| iredadmin-rule-exclusions-plugin    | 9,518,000 - 9,518,999 | https://github.com/EsadCetiner/iredadmin-rule-exclusions-plugin          | 3rd party | &#9989;&nbsp;tested |      |
+| roundcube-rule-exclusions-plugin    | 9,519,000 - 9,519,999 | https://github.com/EsadCetiner/roundcube-rule-exclusions-plugin          | 3rd party | &#9989;&nbsp;tested |      |
+| sogo-rule-exclusions-plugin         | 9,520,000 - 9,520,999 | https://github.com/EsadCetiner/sogo-rule-exclusions-plugin               | 3rd party | &#9989;&nbsp;tested |      |
 | incubator                           | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin                          | official  | -                   |      |
