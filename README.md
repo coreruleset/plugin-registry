@@ -29,7 +29,8 @@ maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,
 | dos-protection-modsecurity-v3       | 9,515,000 - 9,515,999 | https://github.com/coreruleset/dos-protection-plugin-modsecurity-v3      | official  | draft               |      |
 | machine-learning-integration-plugin | 9,516,000 - 9,516,999 | https://github.com/coreruleset/machine-learning-integration-plugin       | official  | draft               |      |
 | performance-plugin                  | 9,517,000 - 9,517,999 | https://github.com/coreruleset/performance-plugin                        | official  | draft               |      |
-| iredadmin-rule-exclusions-plugin    | 9,518,000 - 9,518,999 | https://github.com/EsadCetiner/iredadmin-rule-exclusions-plugin          | 3rd party | &#9989;&nbsp;tested |      |
+| ghost-rule-exclusions               | 9,518,000 - 9,518,999 | https://github.com/coreruleset/ghost-rule-exclusions-plugin              | official  | draft               |      |
 | roundcube-rule-exclusions-plugin    | 9,519,000 - 9,519,999 | https://github.com/EsadCetiner/roundcube-rule-exclusions-plugin          | 3rd party | &#9989;&nbsp;tested |      |
 | sogo-rule-exclusions-plugin         | 9,520,000 - 9,520,999 | https://github.com/EsadCetiner/sogo-rule-exclusions-plugin               | 3rd party | &#9989;&nbsp;tested |      |
+| iredadmin-rule-exclusions-plugin    | 9,521,000 - 9,521,999 | https://github.com/EsadCetiner/iredadmin-rule-exclusions-plugin          | 3rd party | &#9989;&nbsp;tested |      |
 | incubator                           | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin                          | official  | -                   |      |
