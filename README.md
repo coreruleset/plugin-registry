@@ -19,12 +19,12 @@ maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,
 | google-oauth2                       | 9,505,000 - 9,505,999 | https://github.com/coreruleset/google-oauth2-plugin                      | official  | &#9989;&nbsp;tested |      |
 | drupal-rule-exclusions              | 9,506,000 - 9,506,999 | https://github.com/coreruleset/drupal-rule-exclusions-plugin             | official  | untested            |      |
 | wordpress-rule-exclusions           | 9,507,000 - 9,507,999 | https://github.com/coreruleset/wordpress-rule-exclusions-plugin          | official  | &#9989;&nbsp;tested |      |
-| nextcloud-rule-exclusions           | 9,508,000 - 9,508,999 | https://github.com/coreruleset/nextcloud-rule-exclusions-plugin          | official  | untested            |      |
+| nextcloud-rule-exclusions           | 9,508,000 - 9,508,999 | https://github.com/coreruleset/nextcloud-rule-exclusions-plugin          | official  | &#9989;&nbsp;tested |      |
 | dokuwiki-rule-exclusions            | 9,509,000 - 9,509,999 | https://github.com/coreruleset/dokuwiki-rule-exclusions-plugin           | official  | untested            |      |
 | cpanel-rule-exclusions              | 9,510,000 - 9,510,999 | https://github.com/coreruleset/cpanel-rule-exclusions-plugin             | official  | untested            |      |
 | xenforo-rule-exclusions             | 9,511,000 - 9,511,999 | https://github.com/coreruleset/xenforo-rule-exclusions-plugin            | official  | &#9989;&nbsp;tested |      |
 | phpbb-rule-exclusions               | 9,512,000 - 9,512,999 | https://github.com/coreruleset/phpbb-rule-exclusions-plugin              | official  | &#9989;&nbsp;tested |      |
-| phpmyadmin-rule-exclusions          | 9,513,000 - 9,513,999 | https://github.com/coreruleset/phpmyadmin-rule-exclusions-plugin         | official  | being tested        |      |
+| phpmyadmin-rule-exclusions          | 9,513,000 - 9,513,999 | https://github.com/coreruleset/phpmyadmin-rule-exclusions-plugin         | official  | &#9989;&nbsp;tested |      |
 | dos-protection-modsecurity-v2       | 9,514,000 - 9,514,999 | https://github.com/coreruleset/dos-protection-plugin-modsecurity-v2      | official  | untested            |      |
 | dos-protection-modsecurity-v3       | 9,515,000 - 9,515,999 | https://github.com/coreruleset/dos-protection-plugin-modsecurity-v3      | official  | draft               |      |
 | machine-learning-integration-plugin | 9,516,000 - 9,516,999 | https://github.com/coreruleset/machine-learning-integration-plugin       | official  | draft               |      |
