@@ -33,5 +33,5 @@ maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,
 | roundcube-rule-exclusions-plugin    | 9,519,000 - 9,519,999 | https://github.com/EsadCetiner/roundcube-rule-exclusions-plugin          | 3rd party | &#9989;&nbsp;tested |      |
 | sogo-rule-exclusions-plugin         | 9,520,000 - 9,520,999 | https://github.com/EsadCetiner/sogo-rule-exclusions-plugin               | 3rd party | &#9989;&nbsp;tested |      |
 | iredadmin-rule-exclusions-plugin    | 9,521,000 - 9,521,999 | https://github.com/EsadCetiner/iredadmin-rule-exclusions-plugin          | 3rd party | &#9989;&nbsp;tested |      |
-| wordpress-hardening-plugin          | 9,522,000 - 9,522,999 | https://github.com/eilandert/wordpress-hardening-plugin                  | 3rd party | being tested        |      |
+| wordpress-hardening-plugin          | 9,522,000 - 9,522,999 | https://github.com/eilandert/wordpress-hardening-plugin                  | 3rd party | untested            |      |
 | incubator                           | 9,900,000 - 9,999,999 | https://github.com/coreruleset/incubator-plugin                          | official  | -                   |      |
