@@ -10,7 +10,7 @@ Plugins usually get a range of 1,000 IDs with the notable exception of the incub
 maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,999.
 
 | *Plugin Name*                       | *Rule ID Range*       | *Repository*                                                                                                            | *Type*    | *Status*            | *CI* | *License* |
-|-------------------------------------|-----------------------|-------------------------------------------------------------------------------------------------------------------------|-----------|---------------------| -----|------------|
+|-------------------------------------|-----------------------|-------------------------------------------------------------------------------------------------------------------------|-----------|---------------------| -----|-------------|
 | template                            | 9,500,000 - 9,500,999 | [coreruleset/template-plugin](https://github.com/coreruleset/template-plugin)                                           | official  | &#9989;&nbsp;tested | ![Integration tests](https://github.com/coreruleset/template-plugin/actions/workflows/integration.yml/badge.svg) | Apache 2.0 |
 | auto-decoding                       | 9,501,000 - 9,501,999 | [coreruleset/auto-decoding-plugin](https://github.com/coreruleset/auto-decoding-plugin)                                 | official  | untested            |      | Apache 2.0 |
 | antivirus                           | 9,502,000 - 9,502,999 | [coreruleset/antivirus-plugin](https://github.com/coreruleset/antivirus-plugin)                                         | official  | being tested        |      | Apache 2.0 |
