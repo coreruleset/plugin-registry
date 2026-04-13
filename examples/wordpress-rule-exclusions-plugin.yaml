@@ -1,0 +1,50 @@
+# OWASP CRS Plugin Descriptor
+# https://github.com/coreruleset/plugin-registry
+
+schema_version: 1
+
+plugin:
+  name: "wordpress-rule-exclusions-plugin"
+  description: "CRS rule exclusions for WordPress applications"
+  long_description: |
+    Provides targeted rule exclusions to eliminate false positives when
+    running OWASP CRS in front of WordPress sites. Covers the WordPress
+    admin panel, REST API, and common plugin/theme patterns.
+  version: "1.1.0"
+  type: "official"
+  category: "rule-exclusion"
+  status: "tested"
+  license: "Apache-2.0"
+  authors:
+    - name: "OWASP CRS Team"
+      url: "https://coreruleset.org"
+  repository: "https://github.com/coreruleset/wordpress-rule-exclusions-plugin"
+  keywords:
+    - "wordpress"
+    - "cms"
+    - "rule-exclusion"
+    - "false-positive"
+
+rule_id_range:
+  start: 9507000
+  end: 9507999
+
+compatibility:
+  crs_version: ">=4.0.0"
+  engines:
+    - "modsecurity2"
+    - "modsecurity3"
+    - "coraza"
+
+configuration:
+  file: "plugins/wordpress-rule-exclusions-config.conf"
+  variables:
+    - name: "tx.wordpress-rule-exclusions-plugin_enabled"
+      type: "boolean"
+      default: 1
+      description: "Enable or disable WordPress rule exclusions (0 to disable)"
+
+files:
+  config: "plugins/wordpress-rule-exclusions-config.conf"
+  before: "plugins/wordpress-rule-exclusions-before.conf"
+  after: "plugins/wordpress-rule-exclusions-after.conf"

@@ -1,0 +1,56 @@
+# OWASP CRS Plugin Descriptor
+# https://github.com/coreruleset/plugin-registry
+
+schema_version: 1
+
+plugin:
+  name: "body-decompress-plugin"
+  description: "On-the-fly decompression of response bodies for CRS inspection"
+  long_description: |
+    Decompresses gzip/deflate compressed HTTP response bodies so that CRS
+    response rules can inspect the actual content. Without this plugin,
+    compressed responses bypass response body inspection rules.
+  version: "1.0.0"
+  type: "official"
+  category: "utility"
+  status: "being-tested"
+  license: "Apache-2.0"
+  authors:
+    - name: "OWASP CRS Team"
+      url: "https://coreruleset.org"
+  repository: "https://github.com/coreruleset/body-decompress-plugin"
+  keywords:
+    - "decompression"
+    - "response-body"
+    - "gzip"
+
+rule_id_range:
+  start: 9503000
+  end: 9503999
+
+compatibility:
+  crs_version: ">=4.0.0"
+  engines:
+    - "modsecurity2"
+    - "modsecurity3"
+
+configuration:
+  file: "plugins/body-decompress-config-before.conf"
+  variables:
+    - name: "tx.body-decompress-plugin_enable"
+      type: "boolean"
+      default: 1
+      description: "Enable or disable response body decompression"
+
+    - name: "tx.body-decompress-plugin_max_data_size_bytes"
+      type: "integer"
+      default: 102400
+      description: "Maximum decompressed data size in bytes"
+      min: 1024
+      max: 10485760
+      example: 102400
+
+files:
+  config: "plugins/body-decompress-config-before.conf"
+  before: "plugins/body-decompress-before.conf"
+  after: "plugins/body-decompress-after.conf"

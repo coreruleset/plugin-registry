@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/coreruleset/plugin-registry/main/plugin-schema.json",
+  "title": "CRS Plugin Descriptor",
+  "description": "Schema for OWASP CRS plugin metadata files (plugin.yaml)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "plugin",
+    "rule_id_range",
+    "configuration"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1,
+      "description": "Version of the plugin descriptor schema"
+    },
+    "plugin": {
+      "type": "object",
+      "required": [
+        "name",
+        "description",
+        "version",
+        "type",
+        "status",
+        "license",
+        "authors",
+        "repository"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*-plugin$",
+          "description": "Plugin name using the CRS naming convention: <name>-plugin"
+        },
+        "description": {
+          "type": "string",
+          "description": "Short human-readable description of what the plugin does"
+        },
+        "long_description": {
+          "type": "string",
+          "description": "Extended description with details about functionality and use cases"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "description": "Semantic version of the plugin"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "official",
+            "3rd-party"
+          ],
+          "description": "Whether the plugin is maintained by the CRS team or a third party"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "rule-exclusion",
+            "detection",
+            "protection",
+            "utility",
+            "logging",
+            "performance"
+          ],
+          "description": "Functional category of the plugin"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "tested",
+            "being-tested",
+            "untested",
+            "draft"
+          ],
+          "description": "Current testing/maturity status"
+        },
+        "license": {
+          "type": "string",
+          "description": "SPDX license identifier (e.g., Apache-2.0, GPL-2.0-only)"
+        },
+        "authors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        },
+        "repository": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the plugin source repository"
+        },
+        "homepage": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the plugin homepage or documentation site"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Tags for discovery and categorization"
+        }
+      }
+    },
+    "rule_id_range": {
+      "type": "object",
+      "required": [
+        "start",
+        "end"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 9500000,
+          "maximum": 9999999,
+          "description": "First rule ID in the allocated range"
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 9500000,
+          "maximum": 9999999,
+          "description": "Last rule ID in the allocated range"
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "crs_version": {
+          "type": "string",
+          "description": "CRS version constraint (e.g., '>=4.0.0')"
+        },
+        "engines": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "modsecurity2",
+              "modsecurity3",
+              "coraza"
+            ]
+          },
+          "description": "Compatible WAF engines"
+        }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the required plugin"
+          },
+          "version": {
+            "type": "string",
+            "description": "Version constraint for the dependency"
+          }
+        }
+      },
+      "description": "Other CRS plugins this plugin depends on"
+    },
+    "configuration": {
+      "type": "object",
+      "required": [
+        "file",
+        "variables"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": "string",
+          "pattern": "^plugins/.+-config(-before)?\\.conf$",
+          "description": "Path to the configuration file relative to the plugin root"
+        },
+        "variables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "type",
+              "description"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^tx\\..+",
+                "description": "Full ModSecurity transaction variable name (e.g., tx.myplugin_enabled)"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "boolean",
+                  "integer",
+                  "string",
+                  "enum"
+                ],
+                "description": "Data type of the variable"
+              },
+              "default": {
+                "description": "Default value if not explicitly set by the user"
+              },
+              "description": {
+                "type": "string",
+                "description": "Human-readable explanation of the variable's purpose"
+              },
+              "required": {
+                "type": "boolean",
+                "default": false,
+                "description": "Whether this variable must be set for the plugin to function"
+              },
+              "allowed_values": {
+                "type": "array",
+                "description": "List of allowed values when type is 'enum'"
+              },
+              "example": {
+                "description": "Example value for documentation purposes"
+              },
+              "min": {
+                "type": "number",
+                "description": "Minimum value when type is 'integer'"
+              },
+              "max": {
+                "type": "number",
+                "description": "Maximum value when type is 'integer'"
+              }
+            }
+          }
+        }
+      }
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "config": {
+          "type": "string",
+          "description": "Configuration file path (relative to plugin root)"
+        },
+        "before": {
+          "type": "string",
+          "description": "Before-CRS rules file path"
+        },
+        "after": {
+          "type": "string",
+          "description": "After-CRS rules file path"
+        }
+      }
+    }
+  }
+}
