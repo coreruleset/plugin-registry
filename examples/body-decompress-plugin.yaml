@@ -37,7 +37,7 @@ compatibility:
 configuration:
   file: "plugins/body-decompress-config-before.conf"
   variables:
-    - name: "tx.body-decompress-plugin_enable"
+    - name: "tx.body-decompress-plugin_enabled"
       type: "boolean"
       default: 1
       description: "Enable or disable response body decompression"

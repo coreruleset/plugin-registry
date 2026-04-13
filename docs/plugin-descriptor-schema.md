@@ -105,7 +105,7 @@ Each entry in `variables` describes a single `tx.*` variable from the config fil
 
 The four types cover all patterns found across existing CRS plugins:
 
-- **`boolean`** — Enable/disable flags. Every plugin has at least `tx.<name>_enabled`. Values: `0` (disabled) or `1` (enabled).
+- **`boolean`** — Enable/disable flags. Every plugin has at least `tx.<name>_enabled`. Values are integers: `0` (disabled) or `1` (enabled), following the ModSecurity convention for boolean flags.
 - **`integer`** — Numeric thresholds and limits (e.g., `tx.body-decompress-plugin_max_data_size_bytes`). Supports `min`/`max` constraints.
 - **`string`** — Freeform text values (e.g., `tx.google-oauth2-plugin_whitelisted_parameters`). The `example` field helps users understand the expected format.
 - **`enum`** — Constrained choices (e.g., `tx.phpmyadmin-rule-exclusions-plugin_url_format` with values `v51`, `v52`). Must include `allowed_values`.

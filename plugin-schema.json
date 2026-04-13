@@ -206,6 +206,7 @@
         },
         "variables": {
           "type": "array",
+          "minItems": 1,
           "items": {
             "type": "object",
             "required": [
@@ -244,20 +245,103 @@
               },
               "allowed_values": {
                 "type": "array",
+                "items": {
+                  "type": "string"
+                },
                 "description": "List of allowed values when type is 'enum'"
               },
               "example": {
                 "description": "Example value for documentation purposes"
               },
               "min": {
-                "type": "number",
+                "type": "integer",
                 "description": "Minimum value when type is 'integer'"
               },
               "max": {
-                "type": "number",
+                "type": "integer",
                 "description": "Maximum value when type is 'integer'"
               }
-            }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": { "type": { "const": "boolean" } },
+                  "required": ["type"]
+                },
+                "then": {
+                  "properties": {
+                    "default": { "type": "integer", "enum": [0, 1] },
+                    "example": { "type": "integer", "enum": [0, 1] }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": { "type": { "const": "integer" } },
+                  "required": ["type"]
+                },
+                "then": {
+                  "properties": {
+                    "default": { "type": "integer" },
+                    "example": { "type": "integer" }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": { "type": { "const": "string" } },
+                  "required": ["type"]
+                },
+                "then": {
+                  "properties": {
+                    "default": { "type": "string" },
+                    "example": { "type": "string" }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": { "type": { "const": "enum" } },
+                  "required": ["type"]
+                },
+                "then": {
+                  "required": ["allowed_values"],
+                  "properties": {
+                    "default": { "type": "string" },
+                    "example": { "type": "string" }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "not": {
+                    "properties": { "type": { "const": "integer" } },
+                    "required": ["type"]
+                  }
+                },
+                "then": {
+                  "not": {
+                    "anyOf": [
+                      { "required": ["min"] },
+                      { "required": ["max"] }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "not": {
+                    "properties": { "type": { "const": "enum" } },
+                    "required": ["type"]
+                  }
+                },
+                "then": {
+                  "not": {
+                    "required": ["allowed_values"]
+                  }
+                }
+              }
+            ]
           }
         }
       }
