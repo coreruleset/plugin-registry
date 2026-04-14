@@ -22,7 +22,6 @@
       "required": [
         "name",
         "description",
-        "version",
         "type",
         "status",
         "license",
@@ -43,11 +42,6 @@
         "long_description": {
           "type": "string",
           "description": "Extended description with details about functionality and use cases"
-        },
-        "version": {
-          "type": "string",
-          "pattern": "^\\d+\\.\\d+\\.\\d+$",
-          "description": "Semantic version of the plugin"
         },
         "type": {
           "type": "string",

@@ -11,7 +11,6 @@ plugin:
     (Googlebot, Bingbot, etc.) but originate from IP addresses not belonging to
     those search engines. Helps protect against scraping and abuse from clients
     impersonating legitimate bots.
-  version: "1.0.0"
   type: "official"
   category: "detection"
   status: "tested"

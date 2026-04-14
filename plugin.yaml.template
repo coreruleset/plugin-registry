@@ -1,0 +1,86 @@
+# OWASP CRS Plugin Descriptor
+# Copy this file as 'plugin.yaml' in your plugin repository root.
+# See plugin-schema.json for the full JSON Schema definition.
+# Docs: https://github.com/coreruleset/plugin-registry
+
+schema_version: 1
+
+plugin:
+  # Plugin name must follow the pattern: <name>-plugin
+  name: "template-plugin"
+  description: "Short description of what the plugin does"
+  long_description: |
+    Extended description explaining the plugin's purpose, how it works,
+    and when users should consider enabling it. This field supports
+    multi-line text.
+  # "official" for coreruleset-maintained, "3rd-party" otherwise
+  type: "official"
+  # Category: rule-exclusion | detection | protection | utility | logging | performance
+  category: "utility"
+  # Status: tested | being-tested | untested | draft
+  status: "untested"
+  license: "Apache-2.0"
+  authors:
+    - name: "Your Name"
+      # email: "you@example.com"    # optional
+      # url: "https://example.com"  # optional
+  repository: "https://github.com/coreruleset/template-plugin"
+  # homepage: "https://example.com/docs"  # optional
+  keywords:
+    - "example"
+    - "template"
+
+# Registered rule ID range from the plugin registry
+rule_id_range:
+  start: 9500000
+  end: 9500999
+
+# WAF engine and CRS version compatibility (optional)
+compatibility:
+  crs_version: ">=4.0.0"
+  engines:
+    - "modsecurity2"
+    - "modsecurity3"
+    - "coraza"
+
+# Plugin dependencies (optional, omit if none)
+# dependencies:
+#   - name: "other-plugin"
+#     version: ">=1.0.0"
+
+# Configuration variables exposed by the plugin
+configuration:
+  file: "plugins/template-config.conf"
+  variables:
+    - name: "tx.template-plugin_enabled"
+      type: "boolean"
+      default: 1
+      description: "Enable or disable the plugin (0 to disable)"
+      required: false
+
+    # Add your plugin-specific variables below. Examples:
+    #
+    # - name: "tx.template-plugin_threshold"
+    #   type: "integer"
+    #   default: 100
+    #   description: "Detection threshold"
+    #   min: 1
+    #   max: 1000
+    #
+    # - name: "tx.template-plugin_mode"
+    #   type: "enum"
+    #   default: "block"
+    #   description: "Operating mode"
+    #   allowed_values: ["detect", "block"]
+    #
+    # - name: "tx.template-plugin_whitelist"
+    #   type: "string"
+    #   default: ""
+    #   description: "Space-separated list of whitelisted values"
+    #   example: "/value1/ /value2/"
+
+# Plugin rule files (optional, helps tooling locate files)
+files:
+  config: "plugins/template-config.conf"
+  before: "plugins/template-before.conf"
+  after: "plugins/template-after.conf"

@@ -10,7 +10,6 @@ plugin:
     Provides targeted rule exclusions to eliminate false positives when
     running OWASP CRS in front of WordPress sites. Covers the WordPress
     admin panel, REST API, and common plugin/theme patterns.
-  version: "1.1.0"
   type: "official"
   category: "rule-exclusion"
   status: "tested"

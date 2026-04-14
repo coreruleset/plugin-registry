@@ -10,7 +10,6 @@ plugin:
     Decompresses gzip/deflate compressed HTTP response bodies so that CRS
     response rules can inspect the actual content. Without this plugin,
     compressed responses bypass response body inspection rules.
-  version: "1.0.0"
   type: "official"
   category: "utility"
   status: "being-tested"

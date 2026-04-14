@@ -32,7 +32,6 @@ Allows future evolution of the schema without breaking existing parsers. Tooling
 | `name`             | yes      | Plugin name following the CRS convention: `<name>-plugin`. Validated by regex. |
 | `description`      | yes      | One-line summary of the plugin's purpose. |
 | `long_description` | no       | Multi-line extended description for documentation and UI display. |
-| `version`          | yes      | Semantic version (`MAJOR.MINOR.PATCH`). |
 | `type`             | yes      | `official` (coreruleset-maintained) or `3rd-party`. |
 | `category`         | no       | Functional category: `rule-exclusion`, `detection`, `protection`, `utility`, `logging`, or `performance`. |
 | `status`           | yes      | Maturity level: `tested`, `being-tested`, `untested`, or `draft`. |
@@ -143,6 +142,10 @@ A configurator project needs to know more than just variable names and defaults.
 ### Why is `configuration` required?
 
 Every CRS plugin has at least one configuration variable (`tx.<name>_enabled`). Making this section required ensures consistency and guarantees that tooling always has something to work with, even for minimal rule-exclusion plugins.
+
+### Why no `version` field?
+
+The plugin version is derived from GitHub release tags at query time. Embedding a version in `plugin.yaml` would inevitably drift because developers forget to bump it. Tooling should fetch the latest release tag from the repository URL instead. This keeps `plugin.yaml` as a static descriptor that rarely needs updating.
 
 ### Why separate `rule_id_range` from `plugin`?
 
