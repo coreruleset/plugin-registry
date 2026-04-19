@@ -15,7 +15,7 @@ The plugin registry aggregates these descriptors to generate the registry table,
 
 ## Schema Structure
 
-The schema is defined as JSON Schema (2020-12) in [`plugin-schema.json`](../plugin-schema.json). A `plugin.yaml` file has the following top-level sections:
+The schema is defined as [JSON Schema (2020-12)](https://json-schema.org/draft/2020-12/json-schema-core) in [`plugin-schema.json`](../plugin-schema.json). A `plugin.yaml` file has the following top-level sections:
 
 ### `schema_version`
 
@@ -91,11 +91,14 @@ Each entry in `variables` describes a single `tx.*` variable from the config fil
 | Field            | Required | Description |
 |------------------|----------|-------------|
 | `name`           | yes      | Full ModSecurity variable name (e.g., `tx.myplugin_enabled`). |
-| `type`           | yes      | Data type: `boolean`, `integer`, `string`, or `enum`. |
+| `type`           | yes      | Data type: `boolean`, `integer`, `string`, `list`, or `enum`. |
 | `default`        | no       | Default value if not set by the user. |
 | `description`    | yes      | Human-readable explanation of the variable. |
 | `required`       | no       | Whether the user must explicitly set this variable (default: `false`). |
 | `allowed_values` | no       | List of valid values when type is `enum`. |
+| `separator`           | no       | String used to separate multiple entries when type is `list`. |
+| `prefix`                 | no       | String marking the beginning of a list entry when type is `list`. |
+| `suffix`                 | no       | String marking the end of a list entry when type is `list`. |
 | `example`        | no       | Example value for documentation. |
 | `min`            | no       | Minimum value when type is `integer`. |
 | `max`            | no       | Maximum value when type is `integer`. |
@@ -106,7 +109,11 @@ The four types cover all patterns found across existing CRS plugins:
 
 - **`boolean`** — Enable/disable flags. Every plugin has at least `tx.<name>_enabled`. Values are integers: `0` (disabled) or `1` (enabled), following the ModSecurity convention for boolean flags.
 - **`integer`** — Numeric thresholds and limits (e.g., `tx.body-decompress-plugin_max_data_size_bytes`). Supports `min`/`max` constraints.
-- **`string`** — Freeform text values (e.g., `tx.google-oauth2-plugin_whitelisted_parameters`). The `example` field helps users understand the expected format.
+- **`string`** — Freeform text values. The `example` field helps users understand the expected format.
+- **`list`** — Structured list of strings (e.g., `tx.google-oauth2-plugin_whitelisted_parameters`). The fields `separator`, `prefix`, `suffix` define the format. For example, the list `|a/ |b/ |c/` would be defined as follows:
+  - `separator`: `" "` (space character)
+  - `prefix`: `"|"`
+  - `suffix`: `"/"`
 - **`enum`** — Constrained choices (e.g., `tx.phpmyadmin-rule-exclusions-plugin_url_format` with values `v51`, `v52`). Must include `allowed_values`.
 
 ### `files`
