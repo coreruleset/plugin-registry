@@ -1,0 +1,51 @@
+# OWASP CRS Plugin Descriptor
+# https://github.com/coreruleset/plugin-registry
+
+schema_version: 1
+
+plugin:
+  name: "fake-bot-plugin"
+  description: "Detects fake search engine bots by verifying crawler IP addresses"
+  long_description: |
+    Identifies HTTP requests that claim to be from known search engine crawlers
+    (Googlebot, Bingbot, etc.) but originate from IP addresses not belonging to
+    those search engines. Helps protect against scraping and abuse from clients
+    impersonating legitimate bots.
+  type: "official"
+  category: "detection"
+  status: "tested"
+  license: "Apache-2.0"
+  authors:
+    - name: "OWASP CRS Team"
+      url: "https://coreruleset.org"
+  repository: "https://github.com/coreruleset/fake-bot-plugin"
+  homepage: "https://coreruleset.org/docs/plugins/"
+  keywords:
+    - "bot-detection"
+    - "fake-bot"
+    - "crawler"
+    - "security"
+
+rule_id_range:
+  start: 9504000
+  end: 9504999
+
+compatibility:
+  crs_version: ">=4.0.0"
+  engines:
+    - "modsecurity2"
+    - "modsecurity3"
+    - "coraza"
+
+configuration:
+  file: "plugins/fake-bot-config.conf"
+  variables:
+    - name: "tx.fake-bot-plugin_enabled"
+      type: "boolean"
+      default: 1
+      description: "Enable or disable the fake bot detection plugin (0 to disable)"
+
+    - name: "tx.fake-bot-plugin_whitelist_broken_apple_devices"
+      type: "boolean"
+      default: 0
+      description: "Whitelist broken Apple devices that incorrectly identify as Googlebot"
