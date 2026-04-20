@@ -78,9 +78,3 @@ configuration:
     #   default: ""
     #   description: "Space-separated list of whitelisted values"
     #   example: "/value1/ /value2/"
-
-# Plugin rule files (optional, helps tooling locate files)
-files:
-  config: "plugins/template-config.conf"
-  before: "plugins/template-before.conf"
-  after: "plugins/template-after.conf"

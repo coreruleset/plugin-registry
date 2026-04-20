@@ -339,24 +339,6 @@
           }
         }
       }
-    },
-    "files": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "config": {
-          "type": "string",
-          "description": "Configuration file path (relative to plugin root)"
-        },
-        "before": {
-          "type": "string",
-          "description": "Before-CRS rules file path"
-        },
-        "after": {
-          "type": "string",
-          "description": "After-CRS rules file path"
-        }
-      }
     }
   }
 }

@@ -59,7 +59,7 @@ Plugins typically receive a 1,000-ID range. The schema validates that values fal
 | Field         | Description |
 |---------------|-------------|
 | `crs_version` | Version constraint string (e.g., `>=4.0.0`). |
-| `engines`     | List of compatible WAF engines: `modsecurity2`, `modsecurity3`, `coraza`. |
+| `engines`     | List of compatible WAF engines, each one of: `modsecurity2`, `modsecurity3`, or `coraza`. |
 
 When omitted, no compatibility constraints are assumed. Tooling should treat missing engines as "compatible with all".
 
@@ -115,18 +115,6 @@ The four types cover all patterns found across existing CRS plugins:
   - `prefix`: `"|"`
   - `suffix`: `"/"`
 - **`enum`** — Constrained choices (e.g., `tx.phpmyadmin-rule-exclusions-plugin_url_format` with values `v51`, `v52`). Must include `allowed_values`.
-
-### `files`
-
-**Optional.** Maps the standard plugin files for tooling convenience.
-
-| Field    | Description |
-|----------|-------------|
-| `config` | Path to the configuration file. |
-| `before` | Path to the before-CRS rules file. |
-| `after`  | Path to the after-CRS rules file. |
-
-These follow the CRS naming convention: `plugins/<name>-config.conf`, `plugins/<name>-before.conf`, `plugins/<name>-after.conf`. Some plugins use a variant like `<name>-config-before.conf`.
 
 ## Design Decisions
 

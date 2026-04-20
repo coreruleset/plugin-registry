@@ -48,8 +48,3 @@ configuration:
       min: 1024
       max: 10485760
       example: 102400
-
-files:
-  config: "plugins/body-decompress-config-before.conf"
-  before: "plugins/body-decompress-before.conf"
-  after: "plugins/body-decompress-after.conf"

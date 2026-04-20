@@ -42,8 +42,3 @@ configuration:
       type: "boolean"
       default: 1
       description: "Enable or disable WordPress rule exclusions (0 to disable)"
-
-files:
-  config: "plugins/wordpress-rule-exclusions-config.conf"
-  before: "plugins/wordpress-rule-exclusions-before.conf"
-  after: "plugins/wordpress-rule-exclusions-after.conf"

@@ -49,8 +49,3 @@ configuration:
       type: "boolean"
       default: 0
       description: "Whitelist broken Apple devices that incorrectly identify as Googlebot"
-
-files:
-  config: "plugins/fake-bot-config.conf"
-  before: "plugins/fake-bot-before.conf"
-  after: "plugins/fake-bot-after.conf"
