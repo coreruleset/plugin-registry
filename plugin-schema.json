@@ -103,8 +103,8 @@
         },
         "repository": {
           "type": "string",
-          "format": "uri",
-          "description": "URL of the plugin source repository"
+          "pattern": "^https://github\\.com/[^/]+/[^/]+/?$",
+          "description": "URL of the plugin source repository (currently only GitHub repositories are supported)"
         },
         "homepage": {
           "type": "string",

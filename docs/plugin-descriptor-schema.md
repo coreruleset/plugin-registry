@@ -37,7 +37,7 @@ Allows future evolution of the schema without breaking existing parsers. Tooling
 | `status`           | yes      | Maturity level: `tested`, `being-tested`, `untested`, or `draft`. |
 | `license`          | yes      | SPDX license identifier (e.g., `Apache-2.0`, `GPL-2.0-only`). |
 | `authors`          | yes      | List of author objects with `name` (required), `email` and `url` (optional). |
-| `repository`       | yes      | URL of the plugin source repository. |
+| `repository`       | yes      | URL of the plugin GitHub repository (only GitHub repositories are currently supported). |
 | `homepage`         | no       | URL to documentation or project site. |
 | `keywords`         | no       | Tags for discovery and categorization. |
 
@@ -96,9 +96,9 @@ Each entry in `variables` describes a single `tx.*` variable from the config fil
 | `description`    | yes      | Human-readable explanation of the variable. |
 | `required`       | no       | Whether the user must explicitly set this variable (default: `false`). |
 | `allowed_values` | no       | List of valid values when type is `enum`. |
-| `separator`           | no       | String used to separate multiple entries when type is `list`. |
-| `prefix`                 | no       | String marking the beginning of a list entry when type is `list`. |
-| `suffix`                 | no       | String marking the end of a list entry when type is `list`. |
+| `separator`      | no       | String used to separate multiple entries when type is `list`. |
+| `prefix`         | no       | String marking the beginning of a list entry when type is `list`. |
+| `suffix`         | no       | String marking the end of a list entry when type is `list`. |
 | `example`        | no       | Example value for documentation. |
 | `min`            | no       | Minimum value when type is `integer`. |
 | `max`            | no       | Maximum value when type is `integer`. |
@@ -160,6 +160,19 @@ The six categories cover the existing plugin landscape:
 | `performance`    | performance-plugin |
 
 New categories can be added to the schema's enum as the ecosystem grows.
+
+### Engine taxonomy
+
+The supported WAF engines are:
+
+| Engine           | Description |
+|------------------|-------------|
+| `modsecurity2`   | ModSecurity 2.x (Apache module) |
+| `modsecurity3`   | ModSecurity 3.x (connector-based, e.g. nginx) |
+| `coraza`         | Coraza WAF |
+| `all`            | Compatible with all supported engines |
+
+New engines can be added to the schema's enum as the ecosystem grows.
 
 ## Configurator Integration
 
