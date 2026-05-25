@@ -61,7 +61,7 @@ Plugins typically receive a 1,000-ID range. The schema validates that values fal
 | `crs_version` | Version constraint string (e.g., `>=4.0.0`). |
 | `engines`     | List of compatible WAF engines, one of: `modsecurity2`, `modsecurity3`, `coraza`, `all`. |
 
-When omitted, no compatibility constraints are assumed. Tooling should treat missing `engines` field as if `engines` were set tp `all`.
+When omitted, no compatibility constraints are assumed. Tooling should treat missing `engines` field as if `engines` were set to `all`.
 
 ### `dependencies`
 
