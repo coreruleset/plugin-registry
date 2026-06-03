@@ -157,7 +157,8 @@
             "enum": [
               "modsecurity2",
               "modsecurity3",
-              "coraza"
+              "coraza",
+              "all"
             ]
           },
           "description": "Compatible WAF engines"
@@ -221,6 +222,7 @@
                   "boolean",
                   "integer",
                   "string",
+                  "list",
                   "enum"
                 ],
                 "description": "Data type of the variable"
@@ -243,6 +245,18 @@
                   "type": "string"
                 },
                 "description": "List of allowed values when type is 'enum'"
+              },
+              "separator": {
+                "type": "string",
+                "description": "String used to separate multiple entries when type is 'list'"
+              },
+              "prefix": {
+                "type": "string",
+                "description": "String prepended to each list item when type is 'list'"
+              },
+              "suffix": {
+                "type": "string",
+                "description": "String appended to each list item when type is 'list'"
               },
               "example": {
                 "description": "Example value for documentation purposes"
@@ -303,6 +317,36 @@
                   "properties": {
                     "default": { "type": "string" },
                     "example": { "type": "string" }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": { "type": { "const": "list" } },
+                  "required": ["type"]
+                },
+                "then": {
+                  "required": ["separator"],
+                  "properties": {
+                    "default": { "type": "string" },
+                    "example": { "type": "string" }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "not": {
+                    "properties": { "type": { "const": "list" } },
+                    "required": ["type"]
+                  }
+                },
+                "then": {
+                  "not": {
+                    "anyOf": [
+                      { "required": ["separator"] },
+                      { "required": ["prefix"] },
+                      { "required": ["suffix"] }
+                    ]
                   }
                 }
               },

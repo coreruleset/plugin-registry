@@ -82,7 +82,7 @@ Most plugins have no dependencies. This field exists for plugins that build on t
 | Field       | Description |
 |-------------|-------------|
 | `file`      | Path to the `-config.conf` file relative to the plugin root. |
-| `variables` | List of transaction variable definitions (see below). |
+| `variables` | YAML sequence of transaction variable definitions (see [Variable Definition](#variable-definition) below). |
 
 #### Variable Definition
 
@@ -95,17 +95,17 @@ Each entry in `variables` describes a single `tx.*` variable from the config fil
 | `default`        | no       | Default value if not set by the user. |
 | `description`    | yes      | Human-readable explanation of the variable. |
 | `required`       | no       | Whether the user must explicitly set this variable (default: `false`). |
-| `allowed_values` | no       | List of valid values when type is `enum`. |
-| `separator`      | no       | String used to separate multiple entries when type is `list`. |
-| `prefix`         | no       | String marking the beginning of a list entry when type is `list`. |
-| `suffix`         | no       | String marking the end of a list entry when type is `list`. |
+| `allowed_values` | yes (for `enum`) | List of valid values when type is `enum`. |
+| `separator`      | yes (for `list`) | String used to separate list items when type is `list`. |
+| `prefix`         | no       | String prepended to each list item when type is `list` (e.g., `\|` in `\|a/ \|b/`). |
+| `suffix`         | no       | String appended to each list item when type is `list` (e.g., `/` in `\|a/ \|b/`). |
 | `example`        | no       | Example value for documentation. |
 | `min`            | no       | Minimum value when type is `integer`. |
 | `max`            | no       | Maximum value when type is `integer`. |
 
 #### Variable Types
 
-The four types cover all patterns found across existing CRS plugins:
+The five types cover all patterns found across existing CRS plugins:
 
 - **`boolean`** — Enable/disable flags. Every plugin has at least `tx.<name>_enabled`. Values are integers: `0` (disabled) or `1` (enabled), following the ModSecurity convention for boolean flags.
 - **`integer`** — Numeric thresholds and limits (e.g., `tx.body-decompress-plugin_max_data_size_bytes`). Supports `min`/`max` constraints.
