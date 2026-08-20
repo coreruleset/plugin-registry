@@ -1,0 +1,24 @@
+schema_version: 1
+
+plugin:
+  name: "indexed-plugin"
+  description: "Fixture exercising the indexed variable type"
+  type: "3rd-party"
+  status: "untested"
+  license: "Apache-2.0"
+  authors:
+    - name: "CRS Project"
+  repository: "https://github.com/coreruleset/indexed-plugin"
+
+rule_id_range:
+  start: 9500000
+  end: 9500999
+
+# an indexed variable name carries the base name, without the numeric suffix
+configuration:
+  file: "plugins/indexed-config.conf"
+  variables:
+    - name: "tx.indexed-plugin_smtp_cc_1"
+      type: "indexed"
+      max_index: 5
+      description: "Additional CC recipients"

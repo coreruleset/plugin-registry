@@ -78,3 +78,20 @@ configuration:
     #   default: ""
     #   description: "Space-separated list of whitelisted values"
     #   example: "/value1/ /value2/"
+    #
+    # - name: "tx.template-plugin_allowed_paths"
+    #   type: "list"
+    #   description: "Allowed paths, formatted as |/a/ |/b/"
+    #   separator: " "
+    #   prefix: "|"
+    #   suffix: "/"
+    #   example: "|/a/ |/b/"
+    #
+    # A numbered series of variables the plugin reads until one is unset
+    # (tx.template-plugin_recipient_1 ... _5). The name omits the suffix.
+    #
+    # - name: "tx.template-plugin_recipient"
+    #   type: "indexed"
+    #   max_index: 5
+    #   description: "Additional notification recipients"
+    #   example: "second@example.com"

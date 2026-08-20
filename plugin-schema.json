@@ -161,7 +161,10 @@
               "all"
             ]
           },
-          "description": "Compatible WAF engines"
+          "minItems": 1,
+          "description": "Compatible WAF engines; 'all' must be the only entry when used",
+          "if": { "contains": { "const": "all" } },
+          "then": { "maxItems": 1 }
         }
       }
     },
@@ -223,6 +226,7 @@
                   "integer",
                   "string",
                   "list",
+                  "indexed",
                   "enum"
                 ],
                 "description": "Data type of the variable"
@@ -268,6 +272,11 @@
               "max": {
                 "type": "integer",
                 "description": "Maximum value when type is 'integer'"
+              },
+              "max_index": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Highest numeric suffix read by the plugin when type is 'indexed'"
               }
             },
             "allOf": [
@@ -330,6 +339,33 @@
                   "properties": {
                     "default": { "type": "string" },
                     "example": { "type": "string" }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": { "type": { "const": "indexed" } },
+                  "required": ["type"]
+                },
+                "then": {
+                  "required": ["max_index"],
+                  "properties": {
+                    "name": { "not": { "pattern": "_[0-9]+$" } },
+                    "default": { "type": "string" },
+                    "example": { "type": "string" }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "not": {
+                    "properties": { "type": { "const": "indexed" } },
+                    "required": ["type"]
+                  }
+                },
+                "then": {
+                  "not": {
+                    "required": ["max_index"]
                   }
                 }
               },

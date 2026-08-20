@@ -2,7 +2,7 @@
 
 ## Overview
 
-The plugin descriptor schema defines a `plugin.yaml` file that lives in the root of each CRS plugin repository. It provides machine-readable metadata about the plugin, its configuration variables, and compatibility requirements.
+The plugin descriptor schema defines a `plugin.yaml` file that lives in the root of each CRS plugin repository. The file must be named `plugin.yaml` and must sit at the repository root: tooling locates it by appending that path to the `repository` URL, so any other name or location makes the plugin undiscoverable. It provides machine-readable metadata about the plugin, its configuration variables, and compatibility requirements.
 
 The plugin registry aggregates these descriptors to generate the registry table, and downstream tooling (such as a CRS configurator) can parse them to build preconfigured CRS deployments based on plugin selection.
 
@@ -39,7 +39,7 @@ Allows future evolution of the schema without breaking existing parsers. Tooling
 | `authors`          | yes      | List of author objects with `name` (required), `email` and `url` (optional). |
 | `repository`       | yes      | URL of the plugin GitHub repository (only GitHub repositories are currently supported). |
 | `homepage`         | no       | URL to documentation or project site. |
-| `keywords`         | no       | Tags for discovery and categorization. |
+| `keywords`         | no       | YAML list of lowercase tags for discovery and categorization (e.g., `- wordpress`). |
 
 ### `rule_id_range`
 
@@ -59,7 +59,7 @@ Plugins typically receive a 1,000-ID range. The schema validates that values fal
 | Field         | Description |
 |---------------|-------------|
 | `crs_version` | Version constraint string (e.g., `>=4.0.0`). |
-| `engines`     | List of compatible WAF engines, one of: `modsecurity2`, `modsecurity3`, `coraza`, `all`. |
+| `engines`     | List of compatible WAF engines, one of: `modsecurity2`, `modsecurity3`, `coraza`, `all`. `all` is exclusive: when used it must be the only entry. |
 
 When omitted, no compatibility constraints are assumed. Tooling should treat missing `engines` field as if `engines` were set to `all`.
 
@@ -91,7 +91,7 @@ Each entry in `variables` describes a single `tx.*` variable from the config fil
 | Field            | Required | Description |
 |------------------|----------|-------------|
 | `name`           | yes      | Full ModSecurity variable name (e.g., `tx.myplugin_enabled`). |
-| `type`           | yes      | Data type: `boolean`, `integer`, `string`, `list`, or `enum`. |
+| `type`           | yes      | Data type: `boolean`, `integer`, `string`, `list`, `indexed`, or `enum`. |
 | `default`        | no       | Default value if not set by the user. |
 | `description`    | yes      | Human-readable explanation of the variable. |
 | `required`       | no       | Whether the user must explicitly set this variable (default: `false`). |
@@ -102,10 +102,11 @@ Each entry in `variables` describes a single `tx.*` variable from the config fil
 | `example`        | no       | Example value for documentation. |
 | `min`            | no       | Minimum value when type is `integer`. |
 | `max`            | no       | Maximum value when type is `integer`. |
+| `max_index`      | yes (for `indexed`) | Highest numeric suffix the plugin reads when type is `indexed`. |
 
 #### Variable Types
 
-The five types cover all patterns found across existing CRS plugins:
+The six types cover all patterns found across existing CRS plugins:
 
 - **`boolean`** — Enable/disable flags. Every plugin has at least `tx.<name>_enabled`. Values are integers: `0` (disabled) or `1` (enabled), following the ModSecurity convention for boolean flags.
 - **`integer`** — Numeric thresholds and limits (e.g., `tx.body-decompress-plugin_max_data_size_bytes`). Supports `min`/`max` constraints.
@@ -114,6 +115,9 @@ The five types cover all patterns found across existing CRS plugins:
   - `separator`: `" "` (space character)
   - `prefix`: `"|"`
   - `suffix`: `"/"`
+- **`indexed`** — A numbered series of sibling variables that the plugin reads until it finds an unset one, up to a fixed bound (e.g., `tx.false-positive-report-plugin_smtp_cc_1` through `_5`). Unlike `list`, each entry is its own `tx.*` variable rather than one delimited value. The `name` field holds the base name without the numeric suffix and `max_index` gives the upper bound, so tooling emits `<name>_1` … `<name>_<n>` for as many entries as the user supplies:
+  - `name`: `tx.false-positive-report-plugin_smtp_cc`
+  - `max_index`: `5`
 - **`enum`** — Constrained choices (e.g., `tx.phpmyadmin-rule-exclusions-plugin_url_format` with values `v51`, `v52`). Must include `allowed_values`.
 
 ## Design Decisions
@@ -192,3 +196,14 @@ The primary consumer of `plugin.yaml` files is a configurator tool that:
 3. Once the schema is accepted, create PRs adding `plugin.yaml` to all registered plugins.
 4. Update the registry to validate incoming plugin registrations against the schema.
 5. Build the configurator project.
+
+## Validating a Descriptor
+
+Plugin authors can check a descriptor against the schema before opening a PR:
+
+```bash
+uvx check-jsonschema --schemafile plugin-schema.json plugin.yaml
+```
+
+CI runs the same check over `examples/`, `plugin.yaml.template`, and the fixtures in
+`tests/valid/`, and asserts that every fixture in `tests/invalid/` is rejected.
