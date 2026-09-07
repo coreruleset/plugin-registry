@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/coreruleset/plugin-registry/main/registry-schema.json",
+  "title": "CRS Plugin Registry",
+  "description": "Schema for the machine-readable plugin registry (registry.yaml)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "plugins"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1,
+      "description": "Version of the registry schema"
+    },
+    "plugins": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/plugin"
+      }
+    },
+    "reserved": {
+      "type": "array",
+      "description": "Rule ID ranges that are intentionally not allocated to any plugin, with the reason",
+      "items": {
+        "$ref": "#/$defs/reserved_range"
+      }
+    }
+  },
+  "$defs": {
+    "plugin": {
+      "type": "object",
+      "required": [
+        "name",
+        "rule_id_range",
+        "repository",
+        "type",
+        "status",
+        "license"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "Plugin name as shown in the registry"
+        },
+        "rule_id_range": {
+          "$ref": "#/$defs/rule_id_range"
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^https://github\\.com/[^/]+/[^/]+/?$",
+          "description": "URL of the plugin source repository (currently only GitHub repositories are supported)"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "official",
+            "3rd-party"
+          ],
+          "description": "Whether the plugin is maintained by the CRS team or a third party"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "tested",
+            "being-tested",
+            "untested",
+            "draft"
+          ],
+          "description": "Maturity level, attested by CRS maintainers through review of this file"
+        },
+        "ci": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the repository has a .github/workflows/integration.yml workflow; used to derive the CI badge"
+        },
+        "private": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the repository is private"
+        },
+        "license": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9.+-]*$",
+          "description": "SPDX license identifier (e.g., Apache-2.0, GPL-2.0)"
+        }
+      }
+    },
+    "rule_id_range": {
+      "type": "object",
+      "required": [
+        "start",
+        "end"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 9500000,
+          "maximum": 9999999,
+          "description": "First rule ID in the allocated range"
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 9500000,
+          "maximum": 9999999,
+          "description": "Last rule ID in the allocated range"
+        }
+      }
+    },
+    "reserved_range": {
+      "type": "object",
+      "required": [
+        "rule_id_range",
+        "note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "rule_id_range": {
+          "$ref": "#/$defs/rule_id_range"
+        },
+        "note": {
+          "type": "string",
+          "description": "Why this range is not allocated"
+        }
+      }
+    }
+  }
+}

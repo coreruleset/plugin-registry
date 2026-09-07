@@ -1,0 +1,250 @@
+# OWASP CRS Plugin Registry
+# Authoritative list of registered plugins: rule ID range allocation and the
+# vetting signal (type, status). Changed only through reviewed PRs.
+# See registry-schema.json for the full JSON Schema definition and
+# docs/registry-schema.md for what this file attests.
+
+schema_version: 1
+
+plugins:
+  - name: template
+    rule_id_range: {start: 9500000, end: 9500999}
+    repository: https://github.com/coreruleset/template-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: auto-decoding
+    rule_id_range: {start: 9501000, end: 9501999}
+    repository: https://github.com/coreruleset/auto-decoding-plugin
+    type: official
+    status: untested
+    license: Apache-2.0
+
+  - name: antivirus
+    rule_id_range: {start: 9502000, end: 9502999}
+    repository: https://github.com/coreruleset/antivirus-plugin
+    type: official
+    status: being-tested
+    license: Apache-2.0
+
+  - name: body-decompress
+    rule_id_range: {start: 9503000, end: 9503999}
+    repository: https://github.com/coreruleset/body-decompress-plugin
+    type: official
+    status: being-tested
+    ci: true
+    license: Apache-2.0
+
+  - name: fake-bot
+    rule_id_range: {start: 9504000, end: 9504999}
+    repository: https://github.com/coreruleset/fake-bot-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: google-oauth2
+    rule_id_range: {start: 9505000, end: 9505999}
+    repository: https://github.com/coreruleset/google-oauth2-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: drupal-rule-exclusions
+    rule_id_range: {start: 9506000, end: 9506999}
+    repository: https://github.com/coreruleset/drupal-rule-exclusions-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: wordpress-rule-exclusions
+    rule_id_range: {start: 9507000, end: 9507999}
+    repository: https://github.com/coreruleset/wordpress-rule-exclusions-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: nextcloud-rule-exclusions
+    rule_id_range: {start: 9508000, end: 9508999}
+    repository: https://github.com/coreruleset/nextcloud-rule-exclusions-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: dokuwiki-rule-exclusions
+    rule_id_range: {start: 9509000, end: 9509999}
+    repository: https://github.com/coreruleset/dokuwiki-rule-exclusions-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: cpanel-rule-exclusions
+    rule_id_range: {start: 9510000, end: 9510999}
+    repository: https://github.com/coreruleset/cpanel-rule-exclusions-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: xenforo-rule-exclusions
+    rule_id_range: {start: 9511000, end: 9511999}
+    repository: https://github.com/coreruleset/xenforo-rule-exclusions-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: phpbb-rule-exclusions
+    rule_id_range: {start: 9512000, end: 9512999}
+    repository: https://github.com/coreruleset/phpbb-rule-exclusions-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: phpmyadmin-rule-exclusions
+    rule_id_range: {start: 9513000, end: 9513999}
+    repository: https://github.com/coreruleset/phpmyadmin-rule-exclusions-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: dos-protection-modsecurity
+    rule_id_range: {start: 9514000, end: 9514999}
+    repository: https://github.com/coreruleset/dos-protection-plugin-modsecurity
+    type: official
+    status: untested
+    license: Apache-2.0
+
+  - name: machine-learning-integration-plugin
+    rule_id_range: {start: 9516000, end: 9516999}
+    repository: https://github.com/coreruleset/machine-learning-integration-plugin
+    type: official
+    status: draft
+    ci: true
+    license: Apache-2.0
+
+  - name: performance-plugin
+    rule_id_range: {start: 9517000, end: 9517999}
+    repository: https://github.com/coreruleset/performance-plugin
+    type: official
+    status: draft
+    ci: true
+    private: true
+    license: Apache-2.0
+
+  - name: ghost-rule-exclusions
+    rule_id_range: {start: 9518000, end: 9518999}
+    repository: https://github.com/coreruleset/ghost-rule-exclusions-plugin
+    type: official
+    status: draft
+    ci: true
+    private: true
+    license: Apache-2.0
+
+  - name: roundcube-rule-exclusions-plugin
+    rule_id_range: {start: 9519000, end: 9519999}
+    repository: https://github.com/EsadCetiner/roundcube-rule-exclusions-plugin
+    type: 3rd-party
+    status: tested
+    ci: true
+    license: GPL-2.0
+
+  - name: sogo-rule-exclusions-plugin
+    rule_id_range: {start: 9520000, end: 9520999}
+    repository: https://github.com/EsadCetiner/sogo-rule-exclusions-plugin
+    type: 3rd-party
+    status: tested
+    ci: true
+    license: GPL-2.0
+
+  - name: iredadmin-rule-exclusions-plugin
+    rule_id_range: {start: 9521000, end: 9521999}
+    repository: https://github.com/EsadCetiner/iredadmin-rule-exclusions-plugin
+    type: 3rd-party
+    status: tested
+    ci: true
+    license: GPL-2.0
+
+  - name: wordpress-hardening-plugin
+    rule_id_range: {start: 9522000, end: 9522999}
+    repository: https://github.com/eilandert/wordpress-hardening-plugin
+    type: 3rd-party
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: database-logging-plugin
+    rule_id_range: {start: 9523000, end: 9523999}
+    repository: https://github.com/coreruleset/database-logging-plugin
+    type: official
+    status: untested
+    license: Apache-2.0
+
+  - name: referer-hardening-plugin
+    rule_id_range: {start: 9524000, end: 9524999}
+    repository: https://github.com/coreruleset/referer-hardening-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: false-positive-report-plugin
+    rule_id_range: {start: 9525000, end: 9525999}
+    repository: https://github.com/coreruleset/false-positive-report-plugin
+    type: official
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: traffic-observation-plugin
+    rule_id_range: {start: 9526000, end: 9526999}
+    repository: https://github.com/coreruleset/traffic-observation-plugin
+    type: official
+    status: untested
+    ci: true
+    license: Apache-2.0
+
+  - name: netnea-crs-upgrading-plugin
+    rule_id_range: {start: 9527000, end: 9527999}
+    repository: https://github.com/netnea/netnea-crs-upgrading-plugin
+    type: 3rd-party
+    status: untested
+    license: GPL-3.0
+
+  - name: plausible-rule-exclusions-plugin
+    rule_id_range: {start: 9528000, end: 9528999}
+    repository: https://github.com/EsadCetiner/plausible-rule-exclusions-plugin
+    type: 3rd-party
+    status: tested
+    ci: true
+    license: GPL-2.0
+
+  - name: vimbadmin-crs-plugin
+    rule_id_range: {start: 9529000, end: 9529999}
+    repository: https://github.com/eilandert/vimbadmin-crs-plugin
+    type: 3rd-party
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: incubator
+    rule_id_range: {start: 9900000, end: 9999999}
+    repository: https://github.com/coreruleset/incubator-plugin
+    type: official
+    status: being-tested
+    license: Apache-2.0
+
+reserved:
+  - rule_id_range: {start: 9515000, end: 9515999}
+    note: >-
+      Vacated by the retired ModSecurity v3 dos-protection plugin
+      (see issue #12); not yet reallocated.

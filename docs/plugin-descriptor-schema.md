@@ -4,13 +4,12 @@
 
 The plugin descriptor schema defines a `plugin.yaml` file that lives in the root of each CRS plugin repository. The file must be named `plugin.yaml` and must sit at the repository root: tooling locates it by appending that path to the `repository` URL, so any other name or location makes the plugin undiscoverable. It provides machine-readable metadata about the plugin, its configuration variables, and compatibility requirements.
 
-The plugin registry aggregates these descriptors to generate the registry table, and downstream tooling (such as a CRS configurator) can parse them to build preconfigured CRS deployments based on plugin selection.
+The registry table itself is generated from [`registry.yaml`](../registry.yaml), not from these descriptors — see [`registry-schema.md`](registry-schema.md) for why the two files have different owners. Downstream tooling (such as a CRS configurator) parses `plugin.yaml` to build preconfigured CRS deployments based on plugin selection.
 
 ## Goals
 
 - Allow each plugin repository to be the single source of truth for its own metadata.
 - Enable automated tooling to discover, validate, and configure plugins.
-- Replace manual registry table maintenance with generated output.
 - Provide enough information for a configurator to present a UI for plugin selection and variable tuning.
 
 ## Schema Structure

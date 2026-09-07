@@ -1,0 +1,8 @@
+schema_version: 1
+plugins:
+  - name: example
+    rule_id_range: {start: 9990000, end: 9990999}
+    repository: https://github.com/coreruleset/example-plugin
+    type: official
+    status: tested
+    license: "Apache 2.0"
