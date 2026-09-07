@@ -50,7 +50,8 @@ def format_status(plugin: dict) -> str:
 def format_ci(plugin: dict) -> str:
     if not plugin.get("ci"):
         return ""
-    return f"![Integration tests]({plugin['repository'].rstrip('/')}/actions/workflows/integration.yml/badge.svg)"
+    url = f"{plugin['repository'].rstrip('/')}/actions/workflows/integration.yml/badge.svg"
+    return f'<img alt="Integration tests" src="{url}" height="28">'
 
 
 def render_row(plugin: dict) -> str:
