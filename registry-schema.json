@@ -53,8 +53,8 @@
         },
         "repository": {
           "type": "string",
-          "pattern": "^https://github\\.com/[^/]+/[^/]+/?$",
-          "description": "URL of the plugin source repository (currently only GitHub repositories are supported)"
+          "pattern": "^https://github\\.com/[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?/[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?/?$",
+          "description": "URL of the plugin source repository (currently only GitHub repositories are supported); owner and repo segments are restricted to GitHub's own charset so this value can never break out of the markdown/HTML it's rendered into"
         },
         "type": {
           "type": "string",

@@ -37,7 +37,7 @@ def format_range(rule_id_range: dict) -> str:
 
 def format_repository(repository: str) -> str:
     slug = repository.removeprefix("https://github.com/").rstrip("/")
-    return f"[{slug}]({repository})"
+    return f"[{escape(slug, quote=True)}]({escape(repository, quote=True)})"
 
 
 def format_status(plugin: dict) -> str:
@@ -107,7 +107,7 @@ def render_readme(registry: dict) -> None:
     pattern = re.compile(re.escape(BEGIN_MARKER) + r".*?" + re.escape(END_MARKER), re.DOTALL)
     if not pattern.search(readme):
         raise SystemExit(f"README.md is missing {BEGIN_MARKER} / {END_MARKER} markers")
-    README.write_text(pattern.sub(table, readme))
+    README.write_text(pattern.sub(lambda _match: table, readme))
 
 
 def render_json(registry: dict) -> None:
