@@ -1,0 +1,33 @@
+schema_version: 1
+
+plugin:
+  name: "indexed-plugin"
+  description: "Fixture exercising the indexed variable type"
+  type: "3rd-party"
+  status: "untested"
+  license: "Apache-2.0"
+  authors:
+    - name: "CRS Project"
+  repository: "https://github.com/coreruleset/indexed-plugin"
+
+rule_id_range:
+  start: 9500000
+  end: 9500999
+
+compatibility:
+  engines:
+    - "all"
+
+configuration:
+  file: "plugins/indexed-config.conf"
+  variables:
+    - name: "tx.indexed-plugin_enabled"
+      type: "boolean"
+      default: 1
+      description: "Enable or disable the plugin (0 to disable)"
+
+    - name: "tx.indexed-plugin_smtp_cc"
+      type: "indexed"
+      max_index: 5
+      description: "Additional CC recipients, read as _1 through _5 until one is unset"
+      example: "second@example.com"

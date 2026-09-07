@@ -1,0 +1,35 @@
+name: Validate plugin descriptors
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+
+      - name: Descriptors match the schema
+        run: |
+          uvx check-jsonschema==0.38.0 --schemafile plugin-schema.json --force-filetype yaml \
+            examples/*.yaml plugin.yaml.template tests/valid/*.yaml
+
+      - name: Invalid descriptors are rejected
+        run: |
+          status=0
+          for f in tests/invalid/*.yaml; do
+            if uvx check-jsonschema==0.38.0 --schemafile plugin-schema.json --force-filetype yaml "$f" >/dev/null 2>&1; then
+              echo "::error file=$f::expected schema validation to fail, but it passed"
+              status=1
+            fi
+          done
+          exit "$status"
