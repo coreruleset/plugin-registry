@@ -1,0 +1,370 @@
+{
+  "plugins": [
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "template",
+      "repository": "https://github.com/coreruleset/template-plugin",
+      "rule_id_range": {
+        "end": 9500999,
+        "start": 9500000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "license": "Apache-2.0",
+      "name": "auto-decoding",
+      "repository": "https://github.com/coreruleset/auto-decoding-plugin",
+      "rule_id_range": {
+        "end": 9501999,
+        "start": 9501000
+      },
+      "status": "untested",
+      "type": "official"
+    },
+    {
+      "license": "Apache-2.0",
+      "name": "antivirus",
+      "repository": "https://github.com/coreruleset/antivirus-plugin",
+      "rule_id_range": {
+        "end": 9502999,
+        "start": 9502000
+      },
+      "status": "being-tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "body-decompress",
+      "repository": "https://github.com/coreruleset/body-decompress-plugin",
+      "rule_id_range": {
+        "end": 9503999,
+        "start": 9503000
+      },
+      "status": "being-tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "fake-bot",
+      "repository": "https://github.com/coreruleset/fake-bot-plugin",
+      "rule_id_range": {
+        "end": 9504999,
+        "start": 9504000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "google-oauth2",
+      "repository": "https://github.com/coreruleset/google-oauth2-plugin",
+      "rule_id_range": {
+        "end": 9505999,
+        "start": 9505000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "drupal-rule-exclusions",
+      "repository": "https://github.com/coreruleset/drupal-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9506999,
+        "start": 9506000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "wordpress-rule-exclusions",
+      "repository": "https://github.com/coreruleset/wordpress-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9507999,
+        "start": 9507000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "nextcloud-rule-exclusions",
+      "repository": "https://github.com/coreruleset/nextcloud-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9508999,
+        "start": 9508000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "dokuwiki-rule-exclusions",
+      "repository": "https://github.com/coreruleset/dokuwiki-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9509999,
+        "start": 9509000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "cpanel-rule-exclusions",
+      "repository": "https://github.com/coreruleset/cpanel-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9510999,
+        "start": 9510000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "xenforo-rule-exclusions",
+      "repository": "https://github.com/coreruleset/xenforo-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9511999,
+        "start": 9511000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "phpbb-rule-exclusions",
+      "repository": "https://github.com/coreruleset/phpbb-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9512999,
+        "start": 9512000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "phpmyadmin-rule-exclusions",
+      "repository": "https://github.com/coreruleset/phpmyadmin-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9513999,
+        "start": 9513000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "license": "Apache-2.0",
+      "name": "dos-protection-modsecurity",
+      "repository": "https://github.com/coreruleset/dos-protection-plugin-modsecurity",
+      "rule_id_range": {
+        "end": 9514999,
+        "start": 9514000
+      },
+      "status": "untested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "machine-learning-integration-plugin",
+      "repository": "https://github.com/coreruleset/machine-learning-integration-plugin",
+      "rule_id_range": {
+        "end": 9516999,
+        "start": 9516000
+      },
+      "status": "draft",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "performance-plugin",
+      "private": true,
+      "repository": "https://github.com/coreruleset/performance-plugin",
+      "rule_id_range": {
+        "end": 9517999,
+        "start": 9517000
+      },
+      "status": "draft",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "ghost-rule-exclusions",
+      "private": true,
+      "repository": "https://github.com/coreruleset/ghost-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9518999,
+        "start": 9518000
+      },
+      "status": "draft",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "GPL-2.0",
+      "name": "roundcube-rule-exclusions-plugin",
+      "repository": "https://github.com/EsadCetiner/roundcube-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9519999,
+        "start": 9519000
+      },
+      "status": "tested",
+      "type": "3rd-party"
+    },
+    {
+      "ci": true,
+      "license": "GPL-2.0",
+      "name": "sogo-rule-exclusions-plugin",
+      "repository": "https://github.com/EsadCetiner/sogo-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9520999,
+        "start": 9520000
+      },
+      "status": "tested",
+      "type": "3rd-party"
+    },
+    {
+      "ci": true,
+      "license": "GPL-2.0",
+      "name": "iredadmin-rule-exclusions-plugin",
+      "repository": "https://github.com/EsadCetiner/iredadmin-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9521999,
+        "start": 9521000
+      },
+      "status": "tested",
+      "type": "3rd-party"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "wordpress-hardening-plugin",
+      "repository": "https://github.com/eilandert/wordpress-hardening-plugin",
+      "rule_id_range": {
+        "end": 9522999,
+        "start": 9522000
+      },
+      "status": "tested",
+      "type": "3rd-party"
+    },
+    {
+      "license": "Apache-2.0",
+      "name": "database-logging-plugin",
+      "repository": "https://github.com/coreruleset/database-logging-plugin",
+      "rule_id_range": {
+        "end": 9523999,
+        "start": 9523000
+      },
+      "status": "untested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "referer-hardening-plugin",
+      "repository": "https://github.com/coreruleset/referer-hardening-plugin",
+      "rule_id_range": {
+        "end": 9524999,
+        "start": 9524000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "false-positive-report-plugin",
+      "repository": "https://github.com/coreruleset/false-positive-report-plugin",
+      "rule_id_range": {
+        "end": 9525999,
+        "start": 9525000
+      },
+      "status": "tested",
+      "type": "official"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "traffic-observation-plugin",
+      "repository": "https://github.com/coreruleset/traffic-observation-plugin",
+      "rule_id_range": {
+        "end": 9526999,
+        "start": 9526000
+      },
+      "status": "untested",
+      "type": "official"
+    },
+    {
+      "license": "GPL-3.0",
+      "name": "netnea-crs-upgrading-plugin",
+      "repository": "https://github.com/netnea/netnea-crs-upgrading-plugin",
+      "rule_id_range": {
+        "end": 9527999,
+        "start": 9527000
+      },
+      "status": "untested",
+      "type": "3rd-party"
+    },
+    {
+      "ci": true,
+      "license": "GPL-2.0",
+      "name": "plausible-rule-exclusions-plugin",
+      "repository": "https://github.com/EsadCetiner/plausible-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9528999,
+        "start": 9528000
+      },
+      "status": "tested",
+      "type": "3rd-party"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "vimbadmin-crs-plugin",
+      "repository": "https://github.com/eilandert/vimbadmin-crs-plugin",
+      "rule_id_range": {
+        "end": 9529999,
+        "start": 9529000
+      },
+      "status": "tested",
+      "type": "3rd-party"
+    },
+    {
+      "license": "Apache-2.0",
+      "name": "incubator",
+      "repository": "https://github.com/coreruleset/incubator-plugin",
+      "rule_id_range": {
+        "end": 9999999,
+        "start": 9900000
+      },
+      "status": "being-tested",
+      "type": "official"
+    }
+  ],
+  "reserved": [
+    {
+      "note": "Vacated by the retired ModSecurity v3 dos-protection plugin (see issue #12); not yet reallocated.",
+      "rule_id_range": {
+        "end": 9515999,
+        "start": 9515000
+      }
+    }
+  ],
+  "schema_version": 1
+}

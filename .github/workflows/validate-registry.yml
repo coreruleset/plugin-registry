@@ -1,0 +1,43 @@
+name: Validate registry
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+
+      - name: registry.yaml matches the schema
+        run: |
+          uvx check-jsonschema==0.38.0 --schemafile registry-schema.json --force-filetype yaml \
+            registry.yaml tests/registry/valid/*.yaml
+
+      - name: Invalid registry fixtures are rejected
+        run: |
+          status=0
+          for f in tests/registry/invalid/*.yaml; do
+            if uvx check-jsonschema==0.38.0 --schemafile registry-schema.json --force-filetype yaml "$f" >/dev/null 2>&1; then
+              echo "::error file=$f::expected schema validation to fail, but it passed"
+              status=1
+            fi
+          done
+          exit "$status"
+
+      - name: Semantic validation (uniqueness, overlaps)
+        run: uv run tests/registry/test_validate.py
+
+      - name: README.md and registry.json are up to date with registry.yaml
+        run: |
+          uv run scripts/generate_registry.py
+          git diff --exit-code -- README.md registry.json
