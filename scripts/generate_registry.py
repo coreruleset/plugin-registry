@@ -12,6 +12,7 @@ names or overlapping rule ID ranges (checks that JSON Schema cannot express).
 import json
 import re
 import sys
+from html import escape
 from pathlib import Path
 
 import yaml
@@ -51,7 +52,7 @@ def format_ci(plugin: dict) -> str:
     if not plugin.get("ci"):
         return ""
     url = f"{plugin['repository'].rstrip('/')}/actions/workflows/integration.yml/badge.svg"
-    return f'<img alt="Integration tests" src="{url}" height="28">'
+    return f'<img alt="Integration tests" src="{escape(url, quote=True)}" height="28">'
 
 
 def render_row(plugin: dict) -> str:
