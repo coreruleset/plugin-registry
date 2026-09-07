@@ -13,7 +13,8 @@ that a schema alone can't guarantee against.
 """
 
 import importlib.util
-import re
+import os
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
@@ -60,19 +61,39 @@ def check_repository_link_escaping() -> None:
 
 
 def check_readme_substitution_ignores_backreferences() -> None:
-    # A naive `pattern.sub(table, readme)` treats `table` as a regex
-    # replacement string, so a literal "\1" in the data crashes generation
-    # (re.error: invalid group reference). Replicate render_readme's
-    # substitution here without touching the real README.md.
-    pattern = re.compile(
-        re.escape(generate_registry.BEGIN_MARKER) + r".*?" + re.escape(generate_registry.END_MARKER),
-        re.DOTALL,
+    # A naive `pattern.sub(table, readme)` treats the generated table as a
+    # regex replacement string, so a literal "\1" in a rendered row would
+    # crash generation (re.error: invalid group reference). Exercise the
+    # real render_readme() end to end (not a reimplementation of its
+    # substitution) against a temp file, with render_row monkeypatched to
+    # return backreference-looking text.
+    original_readme_path = generate_registry.README
+    original_render_row = generate_registry.render_row
+    tmp_path = None
+    try:
+        fd, name = tempfile.mkstemp(suffix=".md")
+        os.close(fd)
+        tmp_path = Path(name)
+        tmp_path.write_text(f"before\n{generate_registry.BEGIN_MARKER}\nold\n{generate_registry.END_MARKER}\nafter\n")
+        generate_registry.README = tmp_path
+        generate_registry.render_row = lambda _plugin: r"some \1 backreference-looking text"
+
+        generate_registry.render_readme({"plugins": [{}]})
+
+        result = tmp_path.read_text()
+    finally:
+        generate_registry.README = original_readme_path
+        generate_registry.render_row = original_render_row
+        if tmp_path is not None:
+            tmp_path.unlink(missing_ok=True)
+
+    expected_table = (
+        f"{generate_registry.BEGIN_MARKER}\n"
+        f"{generate_registry.TABLE_HEADER}\n"
+        r"some \1 backreference-looking text"
+        f"\n{generate_registry.END_MARKER}"
     )
-    readme = f"before\n{generate_registry.BEGIN_MARKER}\nold\n{generate_registry.END_MARKER}\nafter\n"
-    table = r"some \1 backreference-looking text"
-    result = pattern.sub(lambda _match: table, readme)
-    assert table in result, result
-    assert result == f"before\n{table}\nafter\n", result
+    assert result == f"before\n{expected_table}\nafter\n", result
 
 
 def main() -> None:
