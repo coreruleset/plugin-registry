@@ -236,6 +236,14 @@ plugins:
     ci: true
     license: Apache-2.0
 
+  - name: plex-hardening-plugin
+    rule_id_range: {start: 9530000, end: 9530999}
+    repository: https://github.com/davidscarth/plex-hardening-plugin
+    type: 3rd-party
+    status: tested
+    ci: true
+    license: Apache-2.0
+
   - name: incubator
     rule_id_range: {start: 9900000, end: 9999999}
     repository: https://github.com/coreruleset/incubator-plugin
