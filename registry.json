@@ -287,7 +287,6 @@
       "type": "official"
     },
     {
-      "ci": true,
       "license": "Apache-2.0",
       "name": "false-positive-report-plugin",
       "repository": "https://github.com/coreruleset/false-positive-report-plugin",
