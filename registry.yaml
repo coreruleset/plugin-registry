@@ -202,7 +202,6 @@ plugins:
     repository: https://github.com/coreruleset/false-positive-report-plugin
     type: official
     status: tested
-    ci: true
     license: Apache-2.0
 
   - name: traffic-observation-plugin
