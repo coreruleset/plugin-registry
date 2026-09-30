@@ -51,4 +51,11 @@ See [`docs/registry-schema.md`](docs/registry-schema.md) for what the registry a
 (and what it does not), and [`docs/plugin-descriptor-schema.md`](docs/plugin-descriptor-schema.md)
 for the `plugin.yaml` descriptor that each plugin repository provides.
 
-To register a new plugin, open a PR adding it to `registry.yaml`.
+To register a new plugin, open a PR adding it to `registry.yaml`. After editing it, run:
+
+```bash
+uv run scripts/generate_registry.py
+```
+
+and commit the resulting changes to `README.md` and `registry.json` — CI rejects the PR if they
+drift from `registry.yaml`.
