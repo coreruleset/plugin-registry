@@ -14,7 +14,7 @@ maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,
 |---|---|---|---|---|---|---|
 | template | 9,500,000 - 9,500,999 | [coreruleset/template-plugin](https://github.com/coreruleset/template-plugin) | official | &#9989;&nbsp;tested | ![Integration tests](https://github.com/coreruleset/template-plugin/actions/workflows/integration.yml/badge.svg) | Apache-2.0 |
 | auto-decoding | 9,501,000 - 9,501,999 | [coreruleset/auto-decoding-plugin](https://github.com/coreruleset/auto-decoding-plugin) | official | untested |  | Apache-2.0 |
-| antivirus | 9,502,000 - 9,502,999 | [coreruleset/antivirus-plugin](https://github.com/coreruleset/antivirus-plugin) | official | being tested |  | Apache-2.0 |
+| antivirus | 9,502,000 - 9,502,999 | [coreruleset/antivirus-plugin](https://github.com/coreruleset/antivirus-plugin) | official | &#9989;&nbsp;tested |  | Apache-2.0 |
 | body-decompress | 9,503,000 - 9,503,999 | [coreruleset/body-decompress-plugin](https://github.com/coreruleset/body-decompress-plugin) | official | being tested | ![Integration tests](https://github.com/coreruleset/body-decompress-plugin/actions/workflows/integration.yml/badge.svg) | Apache-2.0 |
 | fake-bot | 9,504,000 - 9,504,999 | [coreruleset/fake-bot-plugin](https://github.com/coreruleset/fake-bot-plugin) | official | &#9989;&nbsp;tested | ![Integration tests](https://github.com/coreruleset/fake-bot-plugin/actions/workflows/integration.yml/badge.svg) | Apache-2.0 |
 | google-oauth2 | 9,505,000 - 9,505,999 | [coreruleset/google-oauth2-plugin](https://github.com/coreruleset/google-oauth2-plugin) | official | &#9989;&nbsp;tested | ![Integration tests](https://github.com/coreruleset/google-oauth2-plugin/actions/workflows/integration.yml/badge.svg) | Apache-2.0 |

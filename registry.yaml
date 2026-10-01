@@ -26,7 +26,7 @@ plugins:
     rule_id_range: {start: 9502000, end: 9502999}
     repository: https://github.com/coreruleset/antivirus-plugin
     type: official
-    status: being-tested
+    status: tested
     license: Apache-2.0
 
   - name: body-decompress
