@@ -186,7 +186,7 @@ plugins:
     rule_id_range: {start: 9523000, end: 9523999}
     repository: https://github.com/coreruleset/database-logging-plugin
     type: official
-    status: untested
+    status: tested
     license: Apache-2.0
 
   - name: referer-hardening-plugin
