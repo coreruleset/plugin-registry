@@ -235,8 +235,16 @@ plugins:
     ci: true
     license: Apache-2.0
 
-  - name: plex-hardening-plugin
+  - name: plex-rule-exclusions-plugin
     rule_id_range: {start: 9530000, end: 9530999}
+    repository: https://github.com/davidscarth/plex-rule-exclusions-plugin
+    type: 3rd-party
+    status: tested
+    ci: true
+    license: Apache-2.0
+
+  - name: plex-hardening-plugin
+    rule_id_range: {start: 9531000, end: 9531999}
     repository: https://github.com/davidscarth/plex-hardening-plugin
     type: 3rd-party
     status: tested
