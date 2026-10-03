@@ -26,7 +26,7 @@ plugins:
     rule_id_range: {start: 9502000, end: 9502999}
     repository: https://github.com/coreruleset/antivirus-plugin
     type: official
-    status: being-tested
+    status: tested
     license: Apache-2.0
 
   - name: body-decompress
@@ -186,7 +186,7 @@ plugins:
     rule_id_range: {start: 9523000, end: 9523999}
     repository: https://github.com/coreruleset/database-logging-plugin
     type: official
-    status: untested
+    status: tested
     license: Apache-2.0
 
   - name: referer-hardening-plugin
@@ -202,7 +202,6 @@ plugins:
     repository: https://github.com/coreruleset/false-positive-report-plugin
     type: official
     status: tested
-    ci: true
     license: Apache-2.0
 
   - name: traffic-observation-plugin
