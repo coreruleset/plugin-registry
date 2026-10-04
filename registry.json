@@ -345,6 +345,30 @@
       "type": "3rd-party"
     },
     {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "plex-rule-exclusions-plugin",
+      "repository": "https://github.com/davidscarth/plex-rule-exclusions-plugin",
+      "rule_id_range": {
+        "end": 9530999,
+        "start": 9530000
+      },
+      "status": "tested",
+      "type": "3rd-party"
+    },
+    {
+      "ci": true,
+      "license": "Apache-2.0",
+      "name": "plex-hardening-plugin",
+      "repository": "https://github.com/davidscarth/plex-hardening-plugin",
+      "rule_id_range": {
+        "end": 9531999,
+        "start": 9531000
+      },
+      "status": "tested",
+      "type": "3rd-party"
+    },
+    {
       "license": "Apache-2.0",
       "name": "incubator",
       "repository": "https://github.com/coreruleset/incubator-plugin",
