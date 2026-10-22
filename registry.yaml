@@ -33,7 +33,7 @@ plugins:
     rule_id_range: {start: 9503000, end: 9503999}
     repository: https://github.com/coreruleset/body-decompress-plugin
     type: official
-    status: being-tested
+    status: tested
     ci: true
     license: Apache-2.0
 
