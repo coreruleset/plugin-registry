@@ -117,13 +117,6 @@ plugins:
     ci: true
     license: Apache-2.0
 
-  - name: dos-protection-modsecurity
-    rule_id_range: {start: 9514000, end: 9514999}
-    repository: https://github.com/coreruleset/dos-protection-plugin-modsecurity
-    type: official
-    status: untested
-    license: Apache-2.0
-
   - name: machine-learning-integration-plugin
     rule_id_range: {start: 9516000, end: 9516999}
     repository: https://github.com/coreruleset/machine-learning-integration-plugin
@@ -263,3 +256,7 @@ reserved:
     note: >-
       Vacated by the retired ModSecurity v3 dos-protection plugin
       (see issue #12); not yet reallocated.
+  - rule_id_range: {start: 9514000, end: 9514999}
+    note: >-
+      Vacated by the retired ModSecurity v2 dos-protection plugin
+      Not yet reallocated.
