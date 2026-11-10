@@ -167,17 +167,6 @@
       "type": "official"
     },
     {
-      "license": "Apache-2.0",
-      "name": "dos-protection-modsecurity",
-      "repository": "https://github.com/coreruleset/dos-protection-plugin-modsecurity",
-      "rule_id_range": {
-        "end": 9514999,
-        "start": 9514000
-      },
-      "status": "untested",
-      "type": "official"
-    },
-    {
       "ci": true,
       "license": "Apache-2.0",
       "name": "machine-learning-integration-plugin",
@@ -386,6 +375,13 @@
       "rule_id_range": {
         "end": 9515999,
         "start": 9515000
+      }
+    },
+    {
+      "note": "Vacated by the retired ModSecurity v2 dos-protection plugin Not yet reallocated.",
+      "rule_id_range": {
+        "end": 9514999,
+        "start": 9514000
       }
     }
   ],

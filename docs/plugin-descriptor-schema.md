@@ -157,7 +157,7 @@ The six categories cover the existing plugin landscape:
 |------------------|----------|
 | `rule-exclusion` | wordpress, drupal, nextcloud, phpbb, cpanel |
 | `detection`      | fake-bot |
-| `protection`     | dos-protection |
+| `protection`     | oauth |
 | `utility`        | template, body-decompress, auto-decoding |
 | `logging`        | database-logging, false-positive-report |
 | `performance`    | performance-plugin |
