@@ -42,6 +42,7 @@ maps the regular CRS IDs from 900K for each rule to the range 9,900,000 - 9,999,
 | vimbadmin-crs-plugin | 9,529,000 - 9,529,999 | [eilandert/vimbadmin-crs-plugin](https://github.com/eilandert/vimbadmin-crs-plugin) | 3rd-party | &#9989;&nbsp;tested | ![Integration tests](https://github.com/eilandert/vimbadmin-crs-plugin/actions/workflows/integration.yml/badge.svg) | Apache-2.0 |
 | plex-rule-exclusions-plugin | 9,530,000 - 9,530,999 | [davidscarth/plex-rule-exclusions-plugin](https://github.com/davidscarth/plex-rule-exclusions-plugin) | 3rd-party | &#9989;&nbsp;tested | ![Integration tests](https://github.com/davidscarth/plex-rule-exclusions-plugin/actions/workflows/integration.yml/badge.svg) | Apache-2.0 |
 | plex-hardening-plugin | 9,531,000 - 9,531,999 | [davidscarth/plex-hardening-plugin](https://github.com/davidscarth/plex-hardening-plugin) | 3rd-party | &#9989;&nbsp;tested | ![Integration tests](https://github.com/davidscarth/plex-hardening-plugin/actions/workflows/integration.yml/badge.svg) | Apache-2.0 |
+| joomla-rule-exclusions-plugin | 9,532,000 - 9,532,999 | [futsure0/joomla-rule-exclusions-plugin](https://github.com/futsure0/joomla-rule-exclusions-plugin) | 3rd-party | &#9989;&nbsp;tested | ![Integration tests](https://github.com/futsure0/joomla-rule-exclusions-plugin/actions/workflows/integration.yml/badge.svg) | Apache-2.0 |
 | incubator | 9,900,000 - 9,999,999 | [coreruleset/incubator-plugin](https://github.com/coreruleset/incubator-plugin) | official | being tested |  | Apache-2.0 |
 <!-- END GENERATED:REGISTRY_TABLE -->
 
