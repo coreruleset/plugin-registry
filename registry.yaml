@@ -136,11 +136,10 @@ plugins:
 
   - name: ghost-rule-exclusions
     rule_id_range: {start: 9518000, end: 9518999}
-    repository: https://github.com/coreruleset/ghost-rule-exclusions-plugin
-    type: official
+    repository: https://github.com/jessebot/ghost-rule-exclusions-plugin
+    type: 3rd-party
     status: draft
     ci: true
-    private: true
     license: Apache-2.0
 
   - name: roundcube-rule-exclusions-plugin
