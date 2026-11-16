@@ -195,14 +195,13 @@
       "ci": true,
       "license": "Apache-2.0",
       "name": "ghost-rule-exclusions",
-      "private": true,
-      "repository": "https://github.com/coreruleset/ghost-rule-exclusions-plugin",
+      "repository": "https://github.com/jessebot/ghost-rule-exclusions-plugin",
       "rule_id_range": {
         "end": 9518999,
         "start": 9518000
       },
       "status": "draft",
-      "type": "official"
+      "type": "3rd-party"
     },
     {
       "ci": true,
