@@ -63,3 +63,10 @@ overlapping rule ID ranges across plugins and reserved ranges — are checked se
 validation does when it finds a violation. CI runs both, then regenerates `README.md` and
 `registry.json` and fails on any drift (`git diff --exit-code`), so the generated files can never
 go stale relative to `registry.yaml`.
+
+Contributors editing `registry.yaml` should run the same generator locally before opening a PR,
+so the regenerated files are already part of the diff instead of failing CI:
+
+```bash
+uv run scripts/generate_registry.py
+```
